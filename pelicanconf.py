@@ -8,7 +8,7 @@ SITEURL = ''
 
 PATH = 'content'
 
-TIMEZONE = 'Europe/Paris'
+TIMEZONE = 'America/Los_Angeles'
 
 DEFAULT_LANG = u'en'
 
@@ -26,8 +26,11 @@ LINKS = (('Pelican', 'http://getpelican.com/'),
          ('You can modify those links in your config file', '#'),)
 
 # Social widget
-SOCIAL = (('You can add links in your config file', '#'),
-          ('Another social link', '#'),)
+SOCIAL = (('facebook', 'http://facebook.com/fritzmueller'),
+	      ('twitter', 'http://twitter.com/infrafritz'),
+	      ('Instagram', 'http://instagram.com/infrafritz'),
+	      ('LinkedIn', 'http://www.linkedin.com/pub/fritz-mueller/a/679/62/'),
+	      ('GitHub', 'https://github.com/fritzm'),)
 
 DEFAULT_PAGINATION = 10
 
