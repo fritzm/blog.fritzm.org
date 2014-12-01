@@ -1,5 +1,5 @@
-PY=python
-PELICAN=pelican
+PY?=python
+PELICAN?=pelican
 PELICANOPTS=
 
 BASEDIR=$(CURDIR)
@@ -24,7 +24,6 @@ help:
 	@echo '   make serve [PORT=8000]           serve site at http://localhost:8000'
 	@echo '   make devserver [PORT=8000]       start/restart develop_server.sh    '
 	@echo '   make stopserver                  stop local server                  '
-	@echo '   make github                      upload the web site via gh-pages   '
 	@echo '                                                                       '
 	@echo 'Set the DEBUG variable to 1 to enable debugging, e.g. make DEBUG=1 html'
 	@echo '                                                                       '
@@ -60,8 +59,5 @@ stopserver:
 publish:
 	$(PELICAN) $(INPUTDIR) -o $(OUTPUTDIR) -s $(PUBLISHCONF) $(PELICANOPTS)
 
-github: publish
-	ghp-import $(OUTPUTDIR)
-	git push origin gh-pages
 
-.PHONY: html help clean regenerate serve devserver publish github
+.PHONY: html help clean regenerate serve devserver publish
