@@ -3,7 +3,7 @@
 from __future__ import unicode_literals
 
 AUTHOR = u'Fritz Mueller'
-SITENAME = u'blog.fritzm.org'
+SITENAME = u'fritzm.github.io'
 SITEURL = ''
 
 PATH = 'content'
@@ -39,9 +39,8 @@ DEFAULT_PAGINATION = 10
 
 PLUGIN_PATHS = ['plugins']
 PLUGINS = ['render_math']
-
 THEME = './theme'
-
 SLUGIFY_SOURCE = 'basename'
+
 AUTORELOAD_IGNORE_CACHE = True
-OUTPUT_RETENTION = (".git")
+OUTPUT_RETENTION = (".git*")
