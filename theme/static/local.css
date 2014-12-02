@@ -56,6 +56,8 @@ h3 { margin-top: 2.5em; }
 .summary { margin-bottom: 4em; }
 .summary pre { display: none; }
 
+figure { text-align: center; }
+figcaption { font-size: 75%; }
 
 /* Styling for Sidebar */
 .social a[href*='activestate.com']:before {content: url('./images/icons/activestate.png'); margin-right: 2px; vertical-align: -3px;}
