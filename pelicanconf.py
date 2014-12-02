@@ -39,4 +39,9 @@ DEFAULT_PAGINATION = 10
 
 PLUGIN_PATHS = ['plugins']
 PLUGINS = ['render_math']
+
 THEME = './theme'
+
+SLUGIFY_SOURCE = 'basename'
+AUTORELOAD_IGNORE_CACHE = True
+OUTPUT_RETENTION = (".git")
