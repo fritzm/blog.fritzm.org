@@ -21,7 +21,7 @@
 
 .navbar .nav > li > a { color: #49AFCD; }
 .navbar .divider-vertical { border-right: 1px solid #4D4D4D; }
-.navbar { margin-bottom: 4em; } 
+.navbar { margin-bottom: 4em; }
 
 
 /* Styling for elements */
@@ -34,7 +34,7 @@ h3 { margin-top: 2.5em; }
 /* Styling for articles */
 .article { padding-bottom:20px; padding-right: 40px; }
 .content-title { margin-bottom: 30px; }
-.article a:hover { text-decoration: none; } 
+.article a:hover { text-decoration: none; }
 
 
 
@@ -72,6 +72,7 @@ figcaption { font-size: 75%; }
 .social a[href*='google.com/reader']:before {content: url('./images/icons/reader.png'); margin-right: 2px; vertical-align: -3px;}
 .social a[href*='instagram.com']:before {content: url('./images/icons/instagram.png'); margin-right: 2px; vertical-align: -3px;}
 .social a[href*='jamendo.com']:before {content: url('./images/icons/jamendo.png'); margin-right: 2px; vertical-align: -3px;}
+.social a[href*='jsfiddle.net']:before {content: url('./images/icons/jsfiddle.png'); margin-right: 2px; vertical-align: -3px;}
 .social a[href*='last.fm']:before {content: url('./images/icons/lastfm.png'); margin-right: 2px; vertical-align: -3px;}
 .social a[href*='linkedin.com']:before {content: url('./images/icons/linkedin.png'); margin-right: 2px; vertical-align: -3px;}
 .social a[href*='rss.xml']:before {content: url('./images/icons/rss.png'); margin-right: 2px; vertical-align: -3px;}

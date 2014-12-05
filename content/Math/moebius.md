@@ -1,5 +1,6 @@
 Title: Moebious transformation animated GIFs
 Date: 2014-12-1 12:45
+Tags: complex analysis, MATLAB, Moebius transformations, Visual Complex Analysis
 
 Here are some animated GIFs that I created a few years ago with MATLAB.  These characterize the action of the four classes of Moebius transformations, mapping the complex plane to itself.  They were inspired by the illustrations and analysis in a section of Tristan Needham's excellent book [*Visual Complex Analysis*](http://books.google.com/books?vid=ISBN0198534469):
 
@@ -34,7 +35,7 @@ All of this can be done quite succinctly in MATLAB, once it is understood what n
 The first few lines create a 512x512 matrix of complex numbers, ranging from -3 to 3 on both the real and imaginary axes, to represent a portion of the complex plane.  This is then pre-mapped through an appropriate $F$.  The <code>for</code> loop iterates on each frame.  The dynamic checkerboard result is calculated as the <code>xor</code> of various versions of functions <code>g1</code> and <code>g2</code> operating over the premapped points.  Each frame is downsampled and written to disk as a separate file, then at the end all the frames are stitched into a movie.  I must then have used some non-matlab utility to convert the movies to animated GIFs, but I'm not sure what that was...
 
     ::::matlab
-    Z = -3:6/512:3-(6/512); Z = Z(ones(1,length(Z)),:); Z = complex(Z,Z'); 
+    Z = -3:6/512:3-(6/512); Z = Z(ones(1,length(Z)),:); Z = complex(Z,Z');
 
     %Z = 1 ./ Z;        % one finite fixed point
     Z = (Z+1)./(Z-1);  % two finite fixed points
