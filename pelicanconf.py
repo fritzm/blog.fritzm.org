@@ -39,9 +39,13 @@ DEFAULT_PAGINATION = 10
 #RELATIVE_URLS = True
 
 PLUGIN_PATHS = ['plugins']
-PLUGINS = ['render_math']
+PLUGINS = ['render_math', 'image_process']
 THEME = './theme'
 SLUGIFY_SOURCE = 'basename'
 
-AUTORELOAD_IGNORE_CACHE = True
 OUTPUT_RETENTION = (".git*")
+
+IMAGE_PROCESS = {
+    'article-image': ["scale_in 300 300 True"],
+    'thumb': ["scale_in 250 250 False"],
+}

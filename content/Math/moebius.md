@@ -4,10 +4,10 @@ Tags: complex analysis, MATLAB, Moebius transformations, Visual Complex Analysis
 
 Here are some animated GIFs that I created a few years ago with MATLAB.  These characterize the action of the four classes of Moebius transformations, mapping the complex plane to itself.  They were inspired by the illustrations and analysis in a section of Tristan Needham's excellent book [*Visual Complex Analysis*](http://books.google.com/books?vid=ISBN0198534469):
 
-<figure><img src="/images/elliptic.gif"><figcaption>elliptic</figcaption></figure>
-<figure><img src="/images/hyperbolic.gif"><figcaption>hyperbolic</figcaption></figure>
-<figure><img src="/images/loxodromic.gif"><figcaption>loxodromic</figcaption></figure>
-<figure><img src="/images/parabolic.gif"><figcaption>parabolic</figcaption></figure>
+<figure><img src="/images/moebius/elliptic.gif"><figcaption>elliptic</figcaption></figure>
+<figure><img src="/images/moebius/hyperbolic.gif"><figcaption>hyperbolic</figcaption></figure>
+<figure><img src="/images/moebius/loxodromic.gif"><figcaption>loxodromic</figcaption></figure>
+<figure><img src="/images/moebius/parabolic.gif"><figcaption>parabolic</figcaption></figure>
 
 So what's it all about?  A Moebius transformation is a mapping on the complex numbers of the form $$ M(z) = \frac{az + b}{cz + d}, $$ where $a, b, c, d$ are complex constants.  Moebius tranformations have many nice features: they are one-to-one and onto on the complex plane (extended with the addition of the "point at $\infty$"), they form a group under composition, they are conformal (angle preserving).  Interestingly, though conformality only implies that they map infinitesimal circles to other infinitesimal circles, Moebius transformations actually map circles of *any* size in the complex plane to other circles in the plane.  For a really nice exposition and proofs of these qualities, see Needham.
 
@@ -21,14 +21,14 @@ Now it turns out that Moebius transformations with fixed points at both $0$ and 
 
 To generate these GIFs, we decorate the complex plane on the $\widetilde{M}$ side like a circular checkerboard or dart board, and represent the action of a given class of $\widetilde{M}$ transformations by rotating it, dilating it, or a combination of both, e.g.:
 
-<figure><img src="/images/pre-elliptic.gif"><figcaption>elliptic \(\widetilde{M}\)</figcaption></figure>
-<figure><img src="/images/pre-hyperbolic.gif"><figcaption>hyperbolic \(\widetilde{M}\)</figcaption></figure>
+<figure><img src="/images/moebius/pre-elliptic.gif"><figcaption>elliptic \(\widetilde{M}\)</figcaption></figure>
+<figure><img src="/images/moebius/pre-hyperbolic.gif"><figcaption>hyperbolic \(\widetilde{M}\)</figcaption></figure>
 
 On the $M$ side, we can pick fixed points $\xi_+$, $\xi_-$ wherever we like, and then derive the corresponding $F$ as above.  For each frame, we take each point on the $M$ side, map it through $F$ to find the corresponding point on the $\widetilde{M}$ side, and check that against a dynamic checkerboard model to see if the point should be black or white in this frame.
 
 Returning to the repeated root, single fixed point case: we treat this similarly, but set $$ F = \frac{1}{z - \xi}, $$ which sends $\xi$ to $\infty$.  As before, it turns out that Moebius transformations of this form (repeated fixed point at $\infty$) reduce to a very simple form: this time, a pure translation.  The parabolic class of Moebius transformations are those whose corresponding $\widetilde{M}$ transformation is a pure translation.  To illustrate these, we use a translating dynamic checkerboard on the $\widetilde{M}$ side that looks like this:
 
-<figure><img src="/images/pre-parabolic.gif"><figcaption>parabolic \(\widetilde{M}\)</figcaption></figure>
+<figure><img src="/images/moebius/pre-parabolic.gif"><figcaption>parabolic \(\widetilde{M}\)</figcaption></figure>
 
 All of this can be done quite succinctly in MATLAB, once it is understood what needs to be done.  Below is the MATLAB snippet which was used to generate these GIFs.  Commenting and uncommenting various lines chooses different $F$ and $\widetilde{M}$ side checkerboard models, resulting in the different outputs.
 
