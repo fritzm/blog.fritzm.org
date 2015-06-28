@@ -33,6 +33,7 @@ SOCIAL = (('facebook', 'http://facebook.com/fritzmueller'),
           ('JSFiddle', 'http://jsfiddle.net/user/fritzm/fiddles/'),
 	      ('GitHub', 'https://github.com/fritzm'),)
 
+SUMMARY_MAX_LENGTH = None
 DEFAULT_PAGINATION = 10
 
 # Uncomment following line if you want document-relative URLs when developing
