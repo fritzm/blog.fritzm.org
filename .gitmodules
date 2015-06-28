@@ -4,3 +4,6 @@
 [submodule "plugins/image_process"]
 	path = plugins/image_process
 	url = git@github.com:whiskyechobravo/image_process.git
+[submodule "output"]
+	path = output
+	url = git@github.com:fritzm/fritzm.github.io.git

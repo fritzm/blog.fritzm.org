@@ -1,4 +1,3 @@
-output/
 cache/
 *.pyc
 *.pid
