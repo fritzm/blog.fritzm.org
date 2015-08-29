@@ -50,3 +50,5 @@ IMAGE_PROCESS = {
     'article-image': ["scale_in 300 300 True"],
     'thumb': ["scale_in 250 250 False"],
 }
+
+DISQUS_SITENAME = 'fritzm'
