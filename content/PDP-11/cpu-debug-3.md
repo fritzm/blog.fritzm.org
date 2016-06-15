@@ -12,13 +12,13 @@ memory range, I can start to toggle in and attempt to execute very simple progra
 The simplest possible program, unconditional branch to self, seems to execute correctly:
 
     #!masm
-    001000 000777         BR      .-2
+    001000 000777         BR      .-0
 
 A register to register data move test does not however:
 
     #!masm
     001000 010203         MOV     R2,R3
-    001002 000776         BR      .-4
+    001002 000776         BR      .-2
 
 Control flow is as expected, but the value that ends up in R3 seems to be negated.  Still, pretty good progress!
 Now that I can step machine states, the next step will be to put the DAP out on an extender card and start tracking

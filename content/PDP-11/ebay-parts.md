@@ -31,15 +31,11 @@ For fun, here's the source listing of the stock bootstrap.  You can match the oc
 the diodes in the ROM above (low word addresses at the top of the matrix, and least-significant-bits on the left).
 
     #!masm
-                  ; REGISTER ASSIGNMENTS:
-           000000 R0=%0
-           000001 R1=%1
-                  ;
     173100 013701         MOV     @#177570,R1     ;READ SWITCH REG FOR ....
            177570
     173104 000005 BEGIN:  RESET                   ;FORCE CLEAR IF RETRY
     173106 010100         MOV     R1,R0           ;....DEVICE WC ADDRESS
-    173110 012710         MOV     #-256.,@R0      ;SET TO READ 256 WORDS
+    173110 012710         MOV     #-256,@R0       ;SET TO READ 256 WORDS
            177400
     173114 020027         CMP     R0,#177344      ;IS IT DECTAPE?
            177344
@@ -59,11 +55,6 @@ the diodes in the ROM above (low word addresses at the top of the matrix, and le
     173152 100754         BMI     BEGIN           ;IF SO START OVER
     173154 105010         CLRB    @R0             ;FOR DECTAPE,STOP TRANSPORT
     173156 000137         JMP     @#0             ;GO TO ROUTINE LOADED
-           000000
-           000001         .END
-
-    BEGIN      000004R         R0    =%000000      R1    =2000001
-    START      000040R         .     = 000062R
 
 Hmmm, the Pygments syntax hightlighting package used by my blog generator doesn't seem to grok MACRO-11; may have to
 do something about that...
