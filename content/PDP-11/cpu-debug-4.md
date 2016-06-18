@@ -14,7 +14,8 @@ that first...
 Moved the MR11 ROM over to the expansion backplane where the MS11-L resides, and it works fine there.  So it doesn't
 seem to be a bus wiring or jumper problem onto the expansion backplane.  Checked the power input pins on the backplane
 behind the MS11-L.  5V was a little low there; trimmed this up.  Probably need to clean or replace the Molex contacts
-on the power distribution board in the cabinet, as it seems a few mV are being shed there needlessly compared to the output of the same regulator on the main backplane, but things seem within stated tolerances for now.
+on the power distribution board in the cabinet, as it seems a few mV are being shed there needlessly compared to the
+output of the same regulator on the main backplane, but things seem within stated tolerances for now.
 
 The -15V input to the MS11-L was missing entirely.  Removed the DD11 expansion backplane, and added jumpers between
 the battery backup supply inputs and the corresponding main supply inputs, per documentation.  Now have -15 to the
