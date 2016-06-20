@@ -3,9 +3,9 @@ Date: 2016-6-18
 Tags: Retro-Computing, PDP-11
 
 After addressing the -15V problem on the MS11, most of the bad behaviors seem to have cleared up except a stuck (on)
-bit 6 in the first 16K words of address space (000000-077776).  Hooked up the new logic analyzer (pic below), and it
-has been very useful in troubleshooting the board -- can easily capture and inspect the timing of complete memory
-cycles.  Definitely worth the investment!
+bit 6 in the first 16K words of address space (000000-077776).  Hooked up the new logic analyzer, and it has been very
+useful in troubleshooting the board -- can easily capture and inspect the timing of complete memory cycles.  Definitely
+worth the investment!
 
 Using the analyzer, I was able to verify the refresh and chip select logic on the board, then track down the stuck bit
 to what seems to be a single failed DRAM chip (E96 on the MS11-L engineering drawings).  I'd like to test the entire
@@ -13,7 +13,9 @@ card before ordering replacement parts, but need to set up address translation t
 the console.
 
 Here is the address translation register setup that I used for testing.  This was followed by a deposit of 000001 to
-KT11 SR0 (777572) to enable translation.  KT11 SR2 was left all zeros to keep D space disabled.
+KT11 SR0 (777572) to enable translation.  KT11 SR2 was left all zeros to keep D space disabled.  This setup allows
+console access to physical addresses in banks 1 through 7 by appropriate settings of virtual address bits 13 through
+15.  I wanted to reserve PAR7 to map I/O space, so I left out bank 0 since it was one of the two already tested.
 
 <style>
 .memlist { display: inline; border-collapse: collapse; margin-right: 1em; }
@@ -51,8 +53,15 @@ KT11 SR0 (777572) to enable translation.  KT11 SR2 was left all zeros to keep D 
 </tbody>
 </table>
 
-This worked as expected according to panel PROG PHY and the logic analyzer, which means the KT11 option is at least
-working for kernel I space.  Tested each bank on the MS11 from the front panel using this setup, and uncovered that
-bank 4 bit 10 also has a stuck on condition.
+This worked as expected according to panel PROG PHY and the logic analyzer, so the KT11 option which I had not
+previously tested is at least working for kernel I space.  Tested each bank on the MS11 from the front panel using this
+setup, and uncovered that bank 4 bit 10 also has a stuck on condition.  Since bank 1 is working now, I can use that
+as work space for the time being in order to continue the CPU debug while awaiting some replacement DRAM chips in the
+mail.
+
+Pics here of the logic analyzer setup, and captured traces of a write and subsequent read to one of the misbehaving
+chips:
 
 [<img class='image-process-thumb' src='/images/pdp11/ms11-debug.jpg'/>]({filename}/images/pdp11/ms11-debug.jpg)
+[<img class='image-process-thumb' src='/images/pdp11/bad-dram-write.jpg'/>]({filename}/images/pdp11/bad-dram-write.jpg)
+[<img class='image-process-thumb' src='/images/pdp11/bad-dram-read.jpg'/>]({filename}/images/pdp11/bad-dram-read.jpg)

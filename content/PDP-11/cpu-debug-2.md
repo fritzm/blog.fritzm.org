@@ -19,12 +19,12 @@ Address bit 0 seems stuck.  Swapped PDR from spare board back to the original.  
 light/switch register, and examine the contents of the MR11 ROM.
 
 Jumpered the DD11 expansion backplane back in, and slotted in the MS11-L memory.  Limited success: can modify and
-examine memory for example near address `001000`, but cannot modify low memory addresses.  In some ranges, can only
-modify every other word.  Also, PC seems stuck at `022000`.
+examine memory for example near address 001000, but cannot modify low memory addresses.  In some ranges, can only
+modify every other word.  Also, PC seems stuck at 022000.
 
 At this point, I could really use a KM11 maintenance board set.  These are pretty hard to get a hold of, but a few
 folks on the web have built their own reproductions.  I put in a PCB order to ExpressPCB with a KM11 layout by Tom
-Uban (desribed [here](http://www.ubanproductions.com/museum.html)), and also put parts on order to stuff it.
+Uban (described [here](http://www.ubanproductions.com/museum.html)), and also put parts on order to stuff it.
 
 Also, figuring I'll need to be going deeper into the CPU debug, I found and bought an
 [HP1662A logic analyzer](http://www.ebay.com/itm/142004889393) on eBay, for about the same money as the KM11 PCB and

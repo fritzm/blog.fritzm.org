@@ -40,7 +40,7 @@ DEFAULT_PAGINATION = 10
 #RELATIVE_URLS = True
 
 PLUGIN_PATHS = ['plugins']
-PLUGINS = ['render_math', 'image_process']
+PLUGINS = ['render_math', 'image_process', 'liquid_tags.youtube']
 THEME = './theme'
 SLUGIFY_SOURCE = 'basename'
 
