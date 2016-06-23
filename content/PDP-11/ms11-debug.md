@@ -13,7 +13,7 @@ card before ordering replacement parts, but need to set up address translation t
 the console.
 
 Here is the address translation register setup that I used for testing.  This was followed by a deposit of 000001 to
-KT11 SR0 (777572) to enable translation.  KT11 SR2 was left all zeros to keep D space disabled.  This setup allows
+KT11 SR0 (777572) to enable translation.  KT11 SR3 was left all zeros to keep D space disabled.  This setup allows
 console access to physical addresses in banks 1 through 7 by appropriate settings of virtual address bits 13 through
 15.  I wanted to reserve PAR7 to map I/O space, so I left out bank 0 since it was one of the two already tested.
 
