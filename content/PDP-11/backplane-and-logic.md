@@ -10,7 +10,7 @@ A tip copied from a fellow restorer: Alconox detergent for removing grime from v
 
 Also pictured here are the characteristic bloody knuckles that are obtained whenever wrestling with PDP backplanes, logic cards, and terminators in close confines.  That really takes you back...
 
-[<img class='image-process-thumb' src='/images/pdp11/boards-in-chassis.jpg'/>]({filename}/images/pdp11/boards-in-chassis.jpg)
-[<img class='image-process-thumb' src='/images/pdp11/board-with-crystals.jpg'/>]({filename}/images/pdp11/board-with-crystals.jpg)
-[<img class='image-process-thumb' src='/images/pdp11/crystals.jpg'/>]({filename}/images/pdp11/crystals.jpg)
-[<img class='image-process-thumb' src='/images/pdp11/knuckles.jpg'/>]({filename}/images/pdp11/knuckles.jpg)
+[<img src='/thumbnails/pdp11/boards-in-chassis_thumbnail_tall.jpg'/>]({filename}/images/pdp11/boards-in-chassis.jpg)
+[<img src='/thumbnails/pdp11/board-with-crystals_thumbnail_tall.jpg'/>]({filename}/images/pdp11/board-with-crystals.jpg)
+[<img src='/thumbnails/pdp11/crystals_thumbnail_tall.jpg'/>]({filename}/images/pdp11/crystals.jpg)
+[<img src='/thumbnails/pdp11/knuckles_thumbnail_tall.jpg'/>]({filename}/images/pdp11/knuckles.jpg)

@@ -26,5 +26,5 @@ down signals with a logic probe.
 
 The HP1662A logic analyzer from eBay has also arrived; should come in handy in investigating the memory issue.
 
-[<img class='image-process-thumb' src='/images/pdp11/km11.jpg'/>]({filename}/images/pdp11/km11.jpg)
-[<img class='image-process-thumb' src='/images/pdp11/km11-action.jpg'/>]({filename}/images/pdp11/km11-action.jpg)
+[<img src='/thumbnails/pdp11/km11_thumbnail_tall.jpg'/>]({filename}/images/pdp11/km11.jpg)
+[<img src='/thumbnails/pdp11/km11-action_thumbnail_tall.jpg'/>]({filename}/images/pdp11/km11-action.jpg)

@@ -40,15 +40,13 @@ DEFAULT_PAGINATION = 10
 #RELATIVE_URLS = True
 
 PLUGIN_PATHS = ['plugins']
-PLUGINS = ['render_math', 'image_process', 'liquid_tags.youtube']
+PLUGINS = ['render_math', 'thumbnailer', 'liquid_tags.youtube']
 THEME = './theme'
 SLUGIFY_SOURCE = 'basename'
 
 OUTPUT_RETENTION = (".git*")
 
-IMAGE_PROCESS = {
-    'article-image': ["scale_in 300 300 True"],
-    'thumb': ["scale_in 250 250 False"],
-}
+IMAGE_PATH = "images"
+THUMBNAIL_SIZES = { 'thumbnail_tall': '?x200' }
 
 DISQUS_SITENAME = 'fritzm'
