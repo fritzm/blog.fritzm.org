@@ -20,4 +20,4 @@ Now have enough of the CPU debugged to toggle in and run a simple light chaser p
     000020  010137  177570  L2:     MOV     R1,@#177570     ;STORE TO DISPLAY REGISTER
     000024  000765                  BR      L0              ;REPEAT FROM THE TOP
 
-{% youtube ZhuzC9v3q-k %}
+{% youtube ZhuzC9v3q-k?rel=0 %}
