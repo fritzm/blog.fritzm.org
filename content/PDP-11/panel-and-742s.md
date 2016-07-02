@@ -8,5 +8,5 @@ The repainted cabinet side door has also been remounted.
 
 Spent some time on the front panel as well.  Removed the tubular lock and took a trip to the local locksmith to have a new key made up.  Replaced all the incandescent indicator lamps with the closest modern equivalent.  Panel is now remounted and it's starting to look like a real '11!
 
-[<img src='/thumbnails/pdp11/742s-mounted_thumbnail_tall.jpg'/>]({filename}/images/pdp11/742s-mounted.jpg)
-[<img src='/thumbnails/pdp11/front-panel_thumbnail_tall.jpg'/>]({filename}/images/pdp11/front-panel.jpg)
+[<img src='/images/pdp11/742s-mounted_thumbnail_tall.jpg'/>]({filename}/images/pdp11/742s-mounted.jpg)
+[<img src='/images/pdp11/front-panel_thumbnail_tall.jpg'/>]({filename}/images/pdp11/front-panel.jpg)

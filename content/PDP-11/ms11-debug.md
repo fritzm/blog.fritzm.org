@@ -62,6 +62,6 @@ mail.
 Pics here of the logic analyzer setup, and captured traces of a write and subsequent read to one of the misbehaving
 chips:
 
-[<img src='/thumbnails/pdp11/ms11-debug_thumbnail_tall.jpg'/>]({filename}/images/pdp11/ms11-debug.jpg)
-[<img src='/thumbnails/pdp11/bad-dram-write_thumbnail_tall.jpg'/>]({filename}/images/pdp11/bad-dram-write.jpg)
-[<img src='/thumbnails/pdp11/bad-dram-read_thumbnail_tall.jpg'/>]({filename}/images/pdp11/bad-dram-read.jpg)
+[<img src='/images/pdp11/ms11-debug_thumbnail_tall.jpg'/>]({filename}/images/pdp11/ms11-debug.jpg)
+[<img src='/images/pdp11/bad-dram-write_thumbnail_tall.jpg'/>]({filename}/images/pdp11/bad-dram-write.jpg)
+[<img src='/images/pdp11/bad-dram-read_thumbnail_tall.jpg'/>]({filename}/images/pdp11/bad-dram-read.jpg)

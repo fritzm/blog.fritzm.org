@@ -48,5 +48,6 @@ OUTPUT_RETENTION = (".git*")
 
 IMAGE_PATH = "images"
 THUMBNAIL_SIZES = { 'thumbnail_tall': '?x200' }
+THUMBNAIL_DIR = "images"
 
 DISQUS_SITENAME = 'fritzm'

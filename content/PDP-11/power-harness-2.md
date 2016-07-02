@@ -15,6 +15,6 @@ Here are some pics of the in-rack wiring in progress, and a couple views of the 
 the capacity of the DC modules, you'll see that an 11/45 like mine (with floating point) is provisioned with +5V at 100
 [sic] amps, and -15V at 20 amps.  That's no joke of a power supply...
 
-[<img src='/thumbnails/pdp11/harness-progress_thumbnail_tall.jpg'/>]({filename}/images/pdp11/harness-progress.jpg)
-[<img src='/thumbnails/pdp11/harness-complete_thumbnail_tall.jpg'/>]({filename}/images/pdp11/harness-complete.jpg)
-[<img src='/thumbnails/pdp11/power-supplies_thumbnail_tall.jpg'/>]({filename}/images/pdp11/power-supplies.jpg)
+[<img src='/images/pdp11/harness-progress_thumbnail_tall.jpg'/>]({filename}/images/pdp11/harness-progress.jpg)
+[<img src='/images/pdp11/harness-complete_thumbnail_tall.jpg'/>]({filename}/images/pdp11/harness-complete.jpg)
+[<img src='/images/pdp11/power-supplies_thumbnail_tall.jpg'/>]({filename}/images/pdp11/power-supplies.jpg)

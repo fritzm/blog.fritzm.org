@@ -6,5 +6,5 @@ Spent a lot of time over a couple weekends cleaning and reconditioning all the m
 
 I have also completely torn down the H742s to give them a thorough clean, touch up a few last corrosion spots, and replace the failing neon indicators.
 
-[<img src='/thumbnails/pdp11/chassis-with-fans_thumbnail_tall.jpg'/>]({filename}/images/pdp11/chassis-with-fans.jpg)
-[<img src='/thumbnails/pdp11/742-rebuild_thumbnail_tall.jpg'/>]({filename}/images/pdp11/742-rebuild.jpg)
+[<img src='/images/pdp11/chassis-with-fans_thumbnail_tall.jpg'/>]({filename}/images/pdp11/chassis-with-fans.jpg)
+[<img src='/images/pdp11/742-rebuild_thumbnail_tall.jpg'/>]({filename}/images/pdp11/742-rebuild.jpg)

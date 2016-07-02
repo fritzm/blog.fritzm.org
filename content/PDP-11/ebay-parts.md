@@ -12,7 +12,7 @@ terminators, grant continuity cards, the MS11-L memory, a DL11 serial interface,
 ahead and slotted in the FPU in the first four slots, since the cleaned and refurbished CPU cabinet is probably the
 safest place to store them now.  Console cables are also installed:
 
-[<img src='/thumbnails/pdp11/boards-in-chassis-2_thumbnail_tall.jpg'/>]({filename}/images/pdp11/boards-in-chassis-2.jpg)
+[<img src='/images/pdp11/boards-in-chassis-2_thumbnail_tall.jpg'/>]({filename}/images/pdp11/boards-in-chassis-2.jpg)
 
 The MR11 ROM is an interesting bit, and probably worth a comment.  This is a 32-word diode-matrix ROM card.  The bits
 are physically laid out on the card (see pictures below); where there is a diode, there is a logical 1 bit and where
@@ -24,8 +24,8 @@ is a handwritten note attached from some engineer describing this.  The mod cust
 from an RK disk unit, to avoid having to toggle in the device address at boot.  I will probably revert this mod because
 I like having things in fairly stock/usual condition.
 
-[<img src='/thumbnails/pdp11/mr11-with-note_thumbnail_tall.jpg'/>]({filename}/images/pdp11/mr11-with-note.jpg)
-[<img src='/thumbnails/pdp11/mr11-bare_thumbnail_tall.jpg'/>]({filename}/images/pdp11/mr11-bare.jpg)
+[<img src='/images/pdp11/mr11-with-note_thumbnail_tall.jpg'/>]({filename}/images/pdp11/mr11-with-note.jpg)
+[<img src='/images/pdp11/mr11-bare_thumbnail_tall.jpg'/>]({filename}/images/pdp11/mr11-bare.jpg)
 
 For fun, here's the source listing of the stock bootstrap.  You can match the octal digits of the machine code against
 the diodes in the ROM above (low word addresses at the top of the matrix, and least-significant-bits on the left).
