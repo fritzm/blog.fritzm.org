@@ -22,7 +22,7 @@ console access to physical addresses in banks 1 through 7 by appropriate setting
 .memlist caption { font-weight: bold; }
 .memlist tr:nth-child(even) { background-color: #f2f2f2; }
 .memlist th, .memlist td { padding: 5px; }
-.memlist td { border: 1px solid lightgray; font-family: "Courier" monospace; }
+.memlist td { border: 1px solid lightgray; font-family: "Courier", monospace; }
 </style>
 
 <table class="memlist">
