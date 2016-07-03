@@ -21,3 +21,19 @@ Now have enough of the CPU debugged to toggle in and run a simple light chaser p
     000024  000765                  BR      L0              ;REPEAT FROM THE TOP
 
 {% youtube ZhuzC9v3q-k?rel=0 %}
+
+Some notes on the program and video above since I've received some questions:
+
+- The listing here is shown assembled at location 000000, but the program is relocatable and can be toggled in at any
+convenient address (000000, on top of the trap vectors, probably isn't the best choice!)
+
+- Data display should be on "DISPLAY REGISTER" to see the chase.
+
+- The front panel toggles are loaded into a counter to control the speed of the chase.  Without some of the most
+significant bits set the chase may go too fast to see, especially on older 11's with incandescent indicators.  All
+toggles off is a special case: this will be the slowest chase, since as written the counter wraps around when
+decremented before being checked for zero.  The video has toggles 15 and 14 up.
+
+- If you look at the address lights in the video, you can see that I ran this program from address 100000.  This was
+because at the time I had a fault in the first 16KW of memory on my MS11-L so I couldn't execute any code at lower
+addresses.
