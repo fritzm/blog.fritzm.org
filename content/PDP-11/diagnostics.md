@@ -60,7 +60,7 @@ of his 11/45, and reports that he does have +15V (actually +12V on his system) d
 an ECO, or a user mod.
 
 Marty's 11/45 also has no power distributed to CA1 on this slots, so it's really looking to me like the reference
-to that on page 510 of the 11/45 maintenance manual is a misprint.  Thanks to Marty for checking all this out!  I'd be
+to that on page 5-10 of the 11/45 maintenance manual is a misprint.  Thanks to Marty for checking all this out!  I'd be
 curious to hear from any other 11/45 owners out there regarding wiring of CU1 and CA1 on slots 26-28 in their systems.
 
 [<img src='/images/pdp11/pdp11gui_thumbnail_tall.jpg'/>]({filename}/images/pdp11/pdp11gui.jpg)

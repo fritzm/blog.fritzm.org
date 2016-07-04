@@ -21,7 +21,7 @@ later revision 11/45 backplanes, and/or a comprehensive list of KB11-A ECOs, but
 anywhere out there.
 
 One other curiosity of these SPC slots that came up while investigating this: the power distribution table in
-the 11/45 maintenance manual, EK-11045-MM-007, page 510, implies that +15V should be distributed to the SPC slots on
+the 11/45 maintenance manual, EK-11045-MM-007, page 5-10, implies that +15V should be distributed to the SPC slots on
 CA1.  This is suspicious to me (maybe a typo?) because all other SPC pinouts that I have seen use this pin and CB1
 as NPR in/out.  And in checking my backplane, there is no power distribution to those pins.  But slots 27 and 28
 (Unibus B) do have their CA1 pins bridged to one another, and their CB1 pins bridged to one another, with what look like
