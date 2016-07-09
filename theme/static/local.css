@@ -36,7 +36,7 @@ h3 { margin-top: 2.5em; }
 .content-title { margin-bottom: 30px; }
 .article a:hover { text-decoration: none; }
 
-
+td.code pre { font-family: Menlo,Consolas,monospace; }
 
 /* Styling for the "other entries" section */
 /* Metadata */

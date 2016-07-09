@@ -19,7 +19,7 @@ In summary:
 .diaglist caption { font-weight: bold; }
 .diaglist tr:nth-child(even) { background-color: #f2f2f2; }
 .diaglist th, .diaglist td { padding: 5px; }
-.diaglist td { border: 1px solid lightgray; font-family: "Courier", monospace; }
+.diaglist td { border: 1px solid lightgray; font-family: Menlo,Consolas,monospace; }
 </style>
 
 <table class="diaglist">
