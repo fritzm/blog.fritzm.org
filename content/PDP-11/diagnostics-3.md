@@ -48,7 +48,7 @@ immediate trap before the subsequent WAIT instruction.  This is true if the seri
 transmitter is ever full/busy when this code is entered this assumption may not hold.  Not sure yet if this will ever
 be a problem for this test given the surrounding code.
 
-In any case, as currently written this routine fails about %50 of the time on my 11/45 currently.  The failure mode
+In any case, as currently written this routine fails about 50% of the time on my 11/45.  The failure mode
 is that the processor sits at the WAIT instruction, (address display 013640, PC+2).  Intervention with the
 console halt switch (halt then back to enabl) breaks the WAIT microcode loop; console cont then takes us to the halt
 at 013740 (address display 013742, PC+2).
@@ -63,8 +63,7 @@ Here is the microcode flow around the WAIT instruction.  The horizontal line acr
 
 <img src='/images/pdp11/wait-microcode.png'/>
 
-Using the KM11, in the failure case I can see the microcode looping through states WAT.00, WAT.20, WAT.30, WAT.11,
-which seems normal for a WAIT with the T bit set.  I have also verified that executing a WAIT *without* the T bit set
+Using the KM11, in the failure case I can see the T bit set and the microcode looping through states WAT.00, WAT.20, WAT.30, WAT.11, which seems expected.  I have also verified that executing a WAIT *without* the T bit set
 loops through states WAT.00 and WAT.10.
 
 Lastly, running on the RC maintenance clock at about half the usual clock frequency makes the failure case happen
