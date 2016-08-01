@@ -26,5 +26,5 @@ establishes consistent preconditions (shift register full, buffer empty) before 
     L0:     TSTB    @#TTCSR         ;CHECK XMIT BUFFER
             BPL     L0              ;LOOP UNTIL READY, ENSURES INT IMMEDIATELY AFTER BIS
 
-I then further verified that the original diagnostic suite passes 100% if I turn the M7800 down to 1200 Baud.  Worth
-noting when trying to run these older diagnostics!
+I then further verified that the unmodified original diagnostic suite passes 100% if I turn the M7800 down to 4800
+Baud.  Worth noting when trying to run these older diagnostics!
