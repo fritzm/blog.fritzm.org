@@ -22,7 +22,7 @@ patch locations, as described previously, are summarized here for future referen
 <tr><th>Diagnostic</th><th>BEL</th><th>Description</th><th>Status</th></tr>
 </thead>
 <tbody>
-<tr><td>D0AA0.BIN</td><td>016370</td><td>Branch</td><td>pass</td></tr>
+<tr><td>D0AA0.BIN</td><td>014212</td><td>Branch</td><td>pass</td></tr>
 <tr><td>D0BA0.BIN</td><td>004336</td><td>Con branch</td><td>pass</td></tr>
 <tr><td>D0CA0.BIN</td><td>005526</td><td>Unary</td><td>pass</td></tr>
 <tr><td>D0DA0.BIN</td><td>016370</td><td>Binary</td><td>pass</td></tr>
