@@ -70,6 +70,8 @@ robustly now.  Of the FP11 diagnostics, the following now pass:
 <tr><td>CFPAB0.BIC</td><td>LDFPS,STFPS,SETI,SETL,SETF,SETD,CFCC</td><td>pass</td></tr>
 <tr><td>CFPBB0.BIC</td><td>STST</td><td>pass</td></tr>
 <tr><td>CFPCD0.BIC</td><td>LDF,LDD,STF,STD</td><td>pass</td></tr>
+<tr><td>CFPHB0.BIC</td><td>CLR,TST,ABS,NEG</td><td>pass</td></tr>
+<tr><td>CFPKB0.BIC</td><td>LDEXP</td><td>pass</td></tr>
 </tbody>
 </table>
 
