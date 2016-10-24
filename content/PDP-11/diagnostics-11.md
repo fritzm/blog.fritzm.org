@@ -3,7 +3,7 @@ Date: 2016-10-16
 Tags: Retro-Computing, PDP-11
 
 Wrote some small test programs to investigate FP add/subtract.  Turns out that single-precision add/subtract
-workS fine, but double-precision results come back with some erroneous bits set in the fraction.
+works fine, but double-precision results come back with some erroneous bits set in the fraction.
 Here's the test code I ended up using for troublshooting -- when executed on my machine, bits 24 and 25
 end up incorrectly set in the result at D3:
 
@@ -28,7 +28,8 @@ end up incorrectly set in the result at D3:
 
 So, the usual procedure: KM11 in the floating point slot, and FRL (where these bits are handled) out on
 extenders.  First step is to verify the microcode sequencing with the KM11 and front panel, and it looks good.
-In particular, the FPU is sequencing through states ADD.04 and ADD.06 per expectation for double-precision, branching correctly for non-zero operands, and taking the equal exponents branch through ADD.24 (refer to
+In particular, the FPU is sequencing through states ADD.04 and ADD.06 per expectation for double-precision, 
+branching correctly for non-zero operands, and taking the equal exponents branch through ADD.24 (refer to
 page FLOWS 8 of the FP11 engineering drawings).
 
 Next, stopped in state ADD.38, where the fraction addition occurs, and scanned the inputs and outputs of
@@ -37,14 +38,14 @@ FRLJ of the FP11 engineering drawings) is incorrectly set.  This is arriving via
 
 The value in the AR register is originally fetched from the register scratchpad, then flows through QR, BR,
 and the FALU during microstates ADD.04, ADD.06, and ADD.02.  Some more stepping and logic probe work showed
-that the fraction values are correct along these paths through these states.  So it looks like the AR itself
+that the fraction values are correct along these paths through these states.  So it looks like AR itself
 may be at fault.
 
-Set up the logic analyzer with a chip-clip, and it looks like E15, a 74194 shift-register that holds bits
-28-31 of AR, is indeed be faulty:
+Set up the logic analyzer on E15, which is a 74194 shift-register that holds bits 28-31 of AR.  It looks
+like it is indeed faulty:
 
 <img src='/images/pdp11/bad-ar.jpg'/>
 
 Here we can see what should be a broadside load: positive CLK edge, S0 and S1 both asserted, and inputs of
 all zeros.  But the output sticks brokenly at 8.  Pulled this shift register, soldered in a socket, and put
-a replacement and some spares on order.  All for now, until the parts arrive.
+a replacement and a couple of spares on order.  All for now, until the parts arrive.
