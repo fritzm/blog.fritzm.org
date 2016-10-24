@@ -1,5 +1,5 @@
 Title: PDP-11/45: Diagnostics XI - FP11 FPU, cont.
-Date: 2016-10-16
+Date: 2016-10-23
 Tags: Retro-Computing, PDP-11
 
 Wrote some small test programs to investigate FP add/subtract.  Turns out that single-precision add/subtract
