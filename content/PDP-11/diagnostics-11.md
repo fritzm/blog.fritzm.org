@@ -10,7 +10,7 @@ end up incorrectly set in the result at D3:
     #!masm
             000000                          AC0=%0
             000001                          AC1=%1
-            000000                          .ASECT
+    000000                                  .ASECT
             001000                          .=1000
     001000  170011                  START:  SETD                ;SET DOUBLE PRECISION MODE
     001002  172467  000014                  LDD     D1,AC0      ;FETCH FIRST ADDEND FROM D1
@@ -28,12 +28,12 @@ end up incorrectly set in the result at D3:
 
 So, the usual procedure: KM11 in the floating point slot, and FRL (where these bits are handled) out on
 extenders.  First step is to verify the microcode sequencing with the KM11 and front panel, and it looks good.
-In particular, the FPU is sequencing through states ADD.04 and ADD.06 per expectation for double-precision, 
+In particular, the FPU is sequencing through states ADD.04 and ADD.06 per expectation for double-precision,
 branching correctly for non-zero operands, and taking the equal exponents branch through ADD.24 (refer to
 page FLOWS 8 of the FP11 engineering drawings).
 
 Next, stopped in state ADD.38, where the fraction addition occurs, and scanned the inputs and outputs of
-all the 74181 bitslice ALUS with a logic probe. Bit 28 of the A input to the FALU (E16 pin 2, refer to page
+all the 74181 bitslice ALUs with a logic probe. Bit 28 of the A input to the FALU (E16 pin 2, refer to page
 FRLJ of the FP11 engineering drawings) is incorrectly set.  This is arriving via the AR register.
 
 The value in the AR register is originally fetched from the register scratchpad, then flows through QR, BR,
