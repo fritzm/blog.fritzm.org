@@ -17,18 +17,18 @@ described in section 5.3.1 of the FP11 maintenance manual.  This reduces the num
 additions needed on average.  It works along the lines of a familiar mental shortcut: suppose you had to
 multiply some number X by 999.  Rather than multiply X by 9 three times and shift and add them all up, you
 would probably just take X * 1,000 and subtract off X * 1.  The key observation is that you can do this
-for any contiguous string of 9s in the multiplier: subtract at the multiplicand from the partial product at
-the starting place value, then add the multiplicand at one past the ending place value.  The FP11 implements
-the binary equivalent of this with a small state machine (comprised of flip-flops MR1, MR0, and STRG1) which
-identifies strings of contiguous 1s and invokes ALU subtractions and additions on the boundaries as the
-multiplier is shifted through.
+for any contiguous string of 9s in the multiplier: subtract the multiplicand from the partial product at
+the place value where the string begins, then add the multiplicand at one past place value where the string
+ends.  The FP11 implements the binary equivalent of this with a small state machine (comprised of flip-flops
+MR1, MR0, and STRG1) which identifies strings of contiguous 1s and invokes ALU subtractions and additions on
+the boundaries as the multiplier is shifted through.
 
 * Debugging techniques: a KM11 in single-clock-transition mode may be used to step within the hardware
 subroutines, as they are driven off the main FP11 clock.  It can be a lot of switch presses to step through
 an entire multiply (120 or so clock transitions at least for a double-precision multiply, and typically
 more because each necessary intermediate add/subtract adds eight clock transitions!) and this gets to be
 pretty tedious and error-prone.  A logic analyzer is very useful here to capture a visualization of an entire
-multiplication at one go, and enable counting off the clock transitions needed to get to something you'd
+multiplication at one go, and enable counting off clock transitions needed to get to something you'd
 like to take a closer look at with a logic probe.  Alternatively, if your FP11 is working well enough to
 run maintenance instructions, there are software techniques that can prematurely terminate the hardware
 subroutines and also give some useful visibility into the intermediate states.
@@ -132,13 +132,12 @@ registers which are then printed out to the serial console.  This is done repeti
 one step further on, so the progression of the internal states of AR and QR over the course of the entire
 multiply may be observed.
 
-A quick aside here on tooling: since I don't have any storage or an OS running yet on my PDP-11, I load and
-execute diagnostics with PDP11GUI to an M9301 boot monitor over a serial connection.  This requires program
-binaries in LDA (absolute loader) format.  For non-trivial MACRO-11 programs I have found it most
+A quick aside here on tooling: since I don't currently have any storage or an OS running on my PDP-11, I load
+and execute diagnostics with PDP11GUI to an M9301 boot monitor over a serial connection.  This requires
+program binaries in LDA (absolute loader) format.  For non-trivial MACRO-11 programs I have found it most
 convenient to use the actual vintage toolchain under RT11 in the simh simulator, because the assembler and
-linker provided with PDP11GUI have some limitations compared to the original tools.  I copy files in and out
-of RT11 via the simulated paper tape reader/punch.  This is also how I produce the MACRO-11 listings seen on
-this blog.
+linker provided with PDP11GUI have some limitations.  I copy files in and out via the simulated paper tape
+reader/punch.  This is also how I produce the MACRO-11 listings seen on this blog.
 
 Okay, back to the program above, running this on my machine very clearly illustrates the malfunction.  Here's
 what the output looks like:
@@ -207,9 +206,9 @@ right half shows the contents of QR.  The most significant 57 bits of each are s
 64-bit field.
 
 In the FP11, as the multiplication proceeds, the multiplicand is held constant, while the multiplier (in QR)
-and partial product (in AR) are successively right shifted.  The bits examined by the
-skip-over-ones-and-zeros state machine at each stage are the rightmost bit or QR shown in the output (QR3)
-and the next bit to its right, not retrievable by software and thus not displayed (QR2).
+and partial product (in AR) are successively right shifted.  The bits of the multiplier involved in the
+skip-over-ones-and-zeros sate macheine are QR3 and QR2.  QR3 is the rightmost bit shown above.  QR2, to its
+right, is not retrievable by software and thus not shown.
 
 Since the multiplicand in the sample code is 1.0, the result left in AR (bottom row of left half) should be
 identical with the initial value of the multiplier in QR (top row of right half), but clearly something is
@@ -220,7 +219,7 @@ signals that derive from it.  Taking a look with the logic analyzer shows this:
 
 <img src='/images/pdp11/multiply-trace.jpg'/>
 
-This is the portion of the multiply dealing with the a string of two consecutive 1s on the multiplier.
+This is a portion of the multiply dealing with the a string of two consecutive 1s on the multiplier.
 The clocking and state machine state bits look correct (note that AR clocks falling edges).
 A four-cycle pause is inserted in the AR clock whenever the state-machine dictates either an add
 or a subtract is to occur, in order to allow for propagation time through the ALUs.  The AR and ALU function
@@ -231,7 +230,7 @@ marker O at the end of the string.
 But the ALU CIN control signal looks incorrect -- it is held high throughout the multiply, but should be
 driven low for the subtraction at marker X.  This means the ALU function actually being selected is A-B-1
 instead of A-B, which would produce the results seen above (the first subtract borrows an extra 1 all the
-way across the partial product, then subsequent subtracts borrow from the resulting extra 1s on the right).
+way across the partial product, then subsequent subtracts borrow from the resulting 1s on the right).
 So it looks like the logic that generates CIN needs a look:
 
 <img src='/images/pdp11/cin-logic.png'/>
