@@ -15,4 +15,5 @@ regulators and replaced their indicator bulbs with modern equivalent (CM7381). S
 equivalent (OL-6003BP) for the indicator bulbs on the -15V regulators.
 
 Next steps will be to verify various Unibus signals on the backplane, then maybe play some swap games with CPU card
-spares to see if I can get closer to a working console as a starting point.  All I have time for this weekend, though; sorry nothing new to see so no new pictures this time!
+spares to see if I can get closer to a working console as a starting point.  All I have time for this weekend, though;
+sorry nothing new to see so no new pictures this time!
