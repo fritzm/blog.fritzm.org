@@ -17,14 +17,14 @@ Turns out to be a failed 8881 bus driver for NPG at the end of the line (E55 on 
 socketed, replaced.
 
 After this, the CPU was asserting NPG, but the signaling still looked a little squirrelly.  Turns out that
-there are jumpers (W1-W5) on the M9301 bootstrap terminator that need to be installed to provide grant 
+there are jumpers (W1-W5) on the M9301 bootstrap terminator that need to be installed to provide grant
 pull-ups when they are not otherwise provided internally by the processor (and the 11/45 is one such
 case).  After installing the jumpers, NPG signaling looked solid.
 
-Tried mounting a booting a few packs.  Packs marked as having RT11 would run for a short while and then hang.
+Tried mounting a booting a few packs.  Packs marked as having RT-11 would run for a short while and then hang.
 But an RKDP pack _successfully booted!_  Wow, that feels pretty good after about two years of working
 seriously on this restoration.  :-)
 
-Going to stop here on a high note, and pick up trying to get a good RT11 boot next time.
+Going to stop here on a high note, and pick up trying to get a good RT-11 boot next time.
 
 [<img src='/images/pdp11/rkdp-boot_thumbnail_tall.jpg'/>]({filename}/images/pdp11/rkdp-boot.jpg)

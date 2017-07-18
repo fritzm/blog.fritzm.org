@@ -135,7 +135,7 @@ multiply may be observed.
 A quick aside here on tooling: since I don't currently have any storage or an OS running on my PDP-11, I load
 and execute diagnostics with PDP11GUI to an M9301 boot monitor over a serial connection.  This requires
 program binaries in LDA (absolute loader) format.  For non-trivial MACRO-11 programs I have found it most
-convenient to use the actual vintage toolchain under RT11 in the simh simulator, because the assembler and
+convenient to use the actual vintage toolchain under RT-11 in the simh simulator, because the assembler and
 linker provided with PDP11GUI have some limitations.  I copy files in and out via the simulated paper tape
 reader/punch.  This is also how I produce the MACRO-11 listings seen on this blog.
 

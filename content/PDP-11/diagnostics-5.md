@@ -94,7 +94,7 @@ micro-state but on the wrong instruction (skipping the first occurrence of the t
 me a great deal of confusion today, as I was stepping through flows at a different program location than I had assumed,
 until I finally noticed the address lights on the console.
 
-* ESC key on the VT52 is non-functional, making it impractical to use for RT11.  The key mechanism looks okay from the
+* ESC key on the VT52 is non-functional, making it impractical to use for RT-11.  The key mechanism looks okay from the
 top (thanks for more helpful advice from the vcfed forum!).  I think I'll need to pull the keyboard PCB and re-flow the
 solder on the affected mechanism as a next step.
 

@@ -3,7 +3,7 @@ Date: 2017-7-6
 Tags: Retro-Computing, PDP-11
 
 Not much technical in this post, except the big ticket news: after all the recent repairs and generating a
-fresh RT11-pack **RT-11 BOOTS FROM DISK!**
+fresh RT-11 pack **RT-11 BOOTS FROM DISK!**
 
 It's been a very long road getting here, but the machine finally has a working, full-featured, operating
 system, capable of supporting self-hosted program development.  Spent a few enjoyable hours editing,

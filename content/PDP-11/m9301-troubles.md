@@ -3,7 +3,7 @@ Date: 2017-7-4
 Tags: Retro-Computing, PDP-11
 
 After a lot of recent progress with the RK11, suffered a setback: after trying once again to image
-a fresh RT11 pack, the machine began to behave erratically at boot.  Sometimes the boot monitor would run
+a fresh RT-11 pack, the machine began to behave erratically at boot.  Sometimes the boot monitor would run
 fine, sometimes it would run for a while and then take a machine exception or vector off to bad address,
 and sometimes the machine would fail to boot at all, immediately taking exceptions of various sorts. Getting
 so close, but then lost a lot of ground; I guess that's sort of the way it is going to be with a machine
