@@ -7,7 +7,7 @@ Console is no longer all address and data lights on, but basic console load addr
 still not working.  A random assortment of address lines seem stuck, different on each power cycle.  About the only
 thing that reliably functions from the console is loading the two highest address bits from the switches, immediately
 after a reset.  Pulled the floating point unit, un-jumpered the DD11 expansion backplane, and removed all peripherals
-except the MR11 diode ROM; same (broken) behavior...
+except the M792 diode ROM; same (broken) behavior...
 
 Scoped all the DC voltages, and did not notice any glitches.  Pulled the H742s for some bench work: verified AC LO and
 DC LO signaling on both units, replaced a broken Mate-n-Lok connector on one of the units, blew out dust from all the 5V

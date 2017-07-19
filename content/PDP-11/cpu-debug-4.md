@@ -11,7 +11,7 @@ I next moved the extender card over to GRA, where this signal originates from a 
 that point the MS11-L memory behavior got even worse, putting and end to these experiments.  So I'll have to tackle
 that first...
 
-Moved the MR11 ROM over to the expansion backplane where the MS11-L resides, and it works fine there.  So it doesn't
+Moved the M792 ROM over to the expansion backplane where the MS11-L resides, and it works fine there.  So it doesn't
 seem to be a bus wiring or jumper problem onto the expansion backplane.  Checked the power input pins on the backplane
 behind the MS11-L.  5V was a little low there; trimmed this up.  Probably need to clean or replace the Molex contacts
 on the power distribution board in the cabinet, as it seems a few mV are being shed there needlessly compared to the

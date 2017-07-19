@@ -8,13 +8,13 @@ to the CPU cards.  The MS11-L is a bit of a luxury; I am figuring it will be eas
 the core memory systems I have on hand.  It will also be nice to run with a full address space.
 
 Below is an updated shot of the CPU chassis with the expansion backplane installed, populated with bus jumpers,
-terminators, grant continuity cards, the MS11-L memory, a DL11 serial interface, and an MR11-DB boostrap ROM.  I've gone
+terminators, grant continuity cards, the MS11-L memory, a DL11 serial interface, and an M792-YB boostrap ROM.  I've gone
 ahead and slotted in the FPU in the first four slots, since the cleaned and refurbished CPU cabinet is probably the
 safest place to store them now.  Console cables are also installed:
 
 [<img src='/images/pdp11/boards-in-chassis-2_thumbnail_tall.jpg'/>]({filename}/images/pdp11/boards-in-chassis-2.jpg)
 
-The MR11 ROM is an interesting bit, and probably worth a comment.  This is a 32-word diode-matrix ROM card.  The bits
+The M792 ROM is an interesting bit, and probably worth a comment.  This is a 32-word diode-matrix ROM card.  The bits
 are physically laid out on the card (see pictures below); where there is a diode, there is a logical 1 bit and where
 there is the absence of a diode there is a logical 0 bit.  Typically the matrix would be loaded with a bootstrap program,
 to save the operator from having to toggle it in from the console on each boot.

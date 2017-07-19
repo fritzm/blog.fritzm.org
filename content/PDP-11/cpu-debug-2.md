@@ -16,7 +16,7 @@ to inductor L1 which looked as if it had been partially sheared away from the bo
 in the BR when halted in console.
 
 Address bit 0 seems stuck.  Swapped PDR from spare board back to the original.  Can now examine and modify the
-light/switch register, and examine the contents of the MR11 ROM.
+light/switch register, and examine the contents of the M792 ROM.
 
 Jumpered the DD11 expansion backplane back in, and slotted in the MS11-L memory.  Limited success: can modify and
 examine memory for example near address 001000, but cannot modify low memory addresses.  In some ranges, can only
