@@ -4,14 +4,14 @@ Tags: Retro-Computing, PDP-11
 
 The VT52 had a broken ESC key, and with RT-11 up and running I was motivated to dig in and fix it (you need
 that ESC key if you are going to run the K52 editor).  Pulling the keycap and giving things a look over, the
-leaf contacts and the plastic plunger that activate the key look fine.  Need to get at the keyboard module
-itself to troubleshoot then.  On a VT52, that means opening the thing all the way up and pulling the main
-boards to get access. In we go...
+leaf contacts and the plastic plunger that activate the key looked fine.  Need to get at the keyboard module
+itself to troubleshoot, and on a VT52 that means opening the thing all the way up and pulling the main
+boards. In we go...
 
 Extracted the keyboard module, powered it from my bench supply, and used a breadboard and some jumpers to
-drive the key select decoders.  Key closure on the back of the module is intermittent, but some flexure of
-the entire keyboard PCB seems to be affecting it.  Replaced/reflowed the solder on the back of the key
-switch even though it looked fine and that seems to have fixed it.
+drive the key select decoders.  Key closure on the back of the module was intermittent, but some flexure of
+the entire keyboard PCB seemed to be affecting it.  Replaced/reflowed the solder on the back of the key
+switch and that seems to have fixed it.
 
 Back together, working well now.  Test drove it for a while under RT-11...
 
