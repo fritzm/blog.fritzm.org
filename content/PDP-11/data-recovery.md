@@ -98,8 +98,8 @@ the authors for permission first.
 </tr><tr>
     <td>B1-24056</td>
     <td>RDAS</td>
-    <td>TBD</td>
-    <td>[TBD] Minor head crashes on media.</td>
+    <td>DOS/BATCH V9-20C</td>
+    <td>[1970-78, 1983] Minor head crashes on media. Partial recovery. FEL related Fortran codes.</td>
 </tr><tr>
     <td>AE 20116</td>
     <td>DEACON FEL</td>
