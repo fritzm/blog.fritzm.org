@@ -39,8 +39,8 @@ DEFAULT_PAGINATION = 10
 # Uncomment following line if you want document-relative URLs when developing
 #RELATIVE_URLS = True
 
-PLUGIN_PATHS = ['plugins']
-PLUGINS = ['render_math', 'thumbnailer', 'liquid_tags.youtube']
+PLUGIN_PATHS = ['plugins', 'plugins-local']
+PLUGINS = ['render_math', 'thumbnailer', 'liquid_tags.youtube', 'photoswipe']
 THEME = './theme'
 SLUGIFY_SOURCE = 'basename'
 
