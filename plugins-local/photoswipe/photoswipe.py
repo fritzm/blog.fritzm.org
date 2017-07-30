@@ -5,6 +5,7 @@ import yaml
 
 from PIL import Image
 from pelican import signals
+from jinja2 import Template
 
 logger = logging.getLogger(__name__)
 
@@ -16,7 +17,6 @@ def initialized(pelican):
 
 def article_generator_finalized(generator):
     galleries = generator.context.get('GALLERIES')
-    from jinja2 import Template
     template = Template(pswipe_template)
     for article in reversed(generator.articles):
         for match in pswipe_regex.findall(article._content):
@@ -44,6 +44,23 @@ def article_generator_finalized(generator):
             replacement = template.render(context)
             article._content = article._content.replace(match[0], replacement)
 
+galleries_template = """\
+var galleries = {
+    {% for galname, items in GALLERIES.iteritems() %}\
+        {{galname}}: [
+            {% for item in items %}\
+                {src:"{{item[0]}}", w:{{item[1][0]}}, h:{{item[1][1]}}, title:"{{item[2]}}"},
+            {% endfor %}\
+        ],
+    {% endfor %}\
+};
+
+"""
+
+def article_writer_finalized(generator, writer):
+    writer.write_file("galleries.js", Template(galleries_template), generator.context)
+
 def register():
     signals.initialized.connect(initialized)
     signals.article_generator_finalized.connect(article_generator_finalized)
+    signals.article_writer_finalized.connect(article_writer_finalized)

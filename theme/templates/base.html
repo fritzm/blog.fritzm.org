@@ -23,16 +23,8 @@
     <link rel="stylesheet" href="{{ SITEURL }}/theme/default-skin/default-skin.css">
     <script src="{{ SITEURL }}/theme/photoswipe.min.js"></script>
     <script src="{{ SITEURL }}/theme/photoswipe-ui-default.min.js"></script>
+    <script src="{{ SITEURL }}/galleries.js"></script>
     <script type="text/javascript">
-        var galleries = {
-            {% for galname, items in GALLERIES.iteritems() %}
-            {{ galname }}: [
-                {% for item in items %}
-                    { src: "{{ item[0] }}", w: {{ item[1][0] }}, h: {{ item[1][1] }}, title: "{{ item[2] }}" },
-                {% endfor %}
-            ],
-            {% endfor %}
-        };
         var pswipe = function(gname, index) {
             var pswpElement = document.querySelectorAll('.pswp')[0];
             var items = galleries[gname];
