@@ -13,5 +13,5 @@ in the boot ROM are passing as well, which is great news.
 Next step will be to hook up PDP11GUI and load some more in-depth diagnostics, in order to shake out any
 remaining bugs with the CPU and memory system.  Will slot in the FPU at that point for testing and debug as well.
 
-[<img src='/images/pdp11/ms11-repaired_thumbnail_tall.jpg'/>]({filename}/images/pdp11/ms11-repaired.jpg)
-[<img src='/images/pdp11/m9301-running_thumbnail_tall.jpg'/>]({filename}/images/pdp11/m9301-running.jpg)
+[pswipe:pdp11,ms11-repaired.jpg,MS11 with two bad 4116 RAMs pulled, socketed, and replaced]
+[pswipe:pdp11,m9301-running.jpg,VT52 attached, and running now in the M9301 bootstrap monitor!]

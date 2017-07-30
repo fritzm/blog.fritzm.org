@@ -19,4 +19,4 @@ repair the board trace with a shunt.  So the backplane will have to come out.  I
 investigating the weird red wire and for not beeping out the power distribution on the backplane before mounting
 and populating it...
 
-[<img src='/images/pdp11/initial-power-on_thumbnail_tall.jpg'/>]({filename}/images/pdp11/initial-power-on.jpg)
+[pswipe:pdp11,initial-power-on.jpg,Initial power on!  No smoke, but all lights on (not right).  Well, it&#39;s a start!]

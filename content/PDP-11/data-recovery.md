@@ -118,6 +118,6 @@ the authors for permission first.
 </tr></tbody>
 </table>
 
-[<img src='/images/pdp11/rk05-packs_thumbnail_tall.jpg'/>]({filename}/images/pdp11/rk05-packs.jpg)
-[<img src='/images/pdp11/head-crashes_thumbnail_tall.jpg'/>]({filename}/images/pdp11/head-crashes.jpg)
-[<img src='/images/pdp11/gravity-pack_thumbnail_tall.jpg'/>]({filename}/images/pdp11/gravity-pack.jpg)
+[pswipe:pdp11,rk05-packs.jpg,Some of the RK05 packs obtained in a surplus auction downstream of Stanford&#39;s Hansen Experimental Physics Lab]
+[pswipe:pdp11,head-crashes.jpg,An RK05 disk platter with obvious head crashes]
+[pswipe:pdp11,gravity-pack.jpg,RK05 pack spinning in drive with heads loaded]

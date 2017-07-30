@@ -30,4 +30,4 @@ Also, figuring I'll need to be going deeper into the CPU debug, I found and boug
 [HP1662A logic analyzer](http://www.ebay.com/itm/142004889393) on eBay, for about the same money as the KM11 PCB and
 parts!
 
-[<img src='/images/pdp11/power-lights_thumbnail_tall.jpg'/>]({filename}/images/pdp11/power-lights.jpg)
+[pswipe:pdp11,power-lights.jpg,Power supply with all regulator lamps repaired]

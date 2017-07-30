@@ -10,4 +10,4 @@ Here you can see the new oscillator fitted (silver rectangular can with tie-wrap
 socketed chips towards the right in the picture.  Interestingly, the schematic I have calls for 8 ROMS of half the size
 of the ones that are in here, and indeed you can see the unpopulated spaces for these on the board.
 
-[<img src='/images/pdp11/vt52-repair_thumbnail_tall.jpg'/>]({filename}/images/pdp11/vt52-repair.jpg)
+[pswipe:pdp11,vt52-repair.jpg,VT52 open for repairs with new clock oscillator installed]

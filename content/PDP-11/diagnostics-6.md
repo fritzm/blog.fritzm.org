@@ -10,5 +10,5 @@ diagnosed and I like to have spares working and ready to go.
 
 Next time I'll be moving on to the CKT series of tests for the KT11 memory management cards...
 
-[<img src='/images/pdp11/prom-programmer_thumbnail_tall.jpg'/>]({filename}/images/pdp11/prom-programmer.jpg)
-[<img src='/images/pdp11/alu-prom-replaced_thumbnail_tall.jpg'/>]({filename}/images/pdp11/alu-prom-replaced.jpg)
+[pswipe:pdp11,prom-programmer.jpg,Data I/O series 22 PROM programmer, arrived from eBay]
+[pswipe:pdp11,alu-prom-replaced.jpg,GRA board with replaced ALU PROM]

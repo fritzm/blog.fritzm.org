@@ -10,5 +10,5 @@ There are a couple of 22,000 mFD 50v electrolytic caps here that I'll try reform
 since they've been sitting idle for upwards of 30yrs!  Also, one obviously leaking 330 mfd axial on regulator board, so
 I'll replace this and all its identical twins.  Parts on order...
 
-[<img src='/images/pdp11/h720e-breakdown_thumbnail_tall.jpg'/>]({filename}/images/pdp11/h720e-breakdown.jpg)
-[<img src='/images/pdp11/h720e-leaking-cap_thumbnail_tall.jpg'/>]({filename}/images/pdp11/h720e-leaking-cap.jpg)
+[pswipe:pdp11,h720e-breakdown.jpg,Tearing down the H720E power supply for the RK11 storage controller]
+[pswipe:pdp11,h720e-leaking-cap.jpg,Leaking tantalum cap on H720e regulator board]

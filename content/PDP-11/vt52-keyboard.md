@@ -15,6 +15,6 @@ switch and that seems to have fixed it.
 
 Back together, working well now.  Test drove it for a while under RT-11...
 
-[<img src='/images/pdp11/vt52-guts_thumbnail_tall.jpg'/>]({filename}/images/pdp11/vt52-guts.jpg)
-[<img src='/images/pdp11/vt52-keys_thumbnail_tall.jpg'/>]({filename}/images/pdp11/vt52-keys.jpg)
-[<img src='/images/pdp11/rt11-adventure_thumbnail_tall.jpg'/>]({filename}/images/pdp11/rt11-adventure.jpg)
+[pswipe:pdp11,vt52-guts.jpg,VT52 with logic boards and keyboard removed]
+[pswipe:pdp11,vt52-keys.jpg,VT52 keyboard under test, powered from bench supply]
+[pswipe:pdp11,rt11-adventure.jpg,VT52 test drive with RT-11 Adventure]

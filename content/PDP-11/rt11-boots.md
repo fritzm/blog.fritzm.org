@@ -15,4 +15,4 @@ Next up will be to clean and inspect the dozen or so RK05 packs that I have on h
 archive whatever content I can.  That should let me clear off a few packs to create some space to
 experiment with some additional operating systems, including 6th Edition Unix.
 
-[<img src='/images/pdp11/rt11-boots_thumbnail_tall.jpg'/>]({filename}/images/pdp11/rt11-boots.jpg)
+[pswipe:pdp11,rt11-boots.jpg,At long last: RT-11 boots from an RK05 pack!]

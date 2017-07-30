@@ -14,7 +14,7 @@ Well, now "someday" is here!  The kid is off to college and I've moved house onc
 
 Here are a some pics from the first weekend: the two H960 racks that are the bones of the whole thing, some glamour shots of the processor backplane and the RK11-C disk controller, and my buddy Chris helping to remount the RK05 drives on their rails temporarily to keep them off the floor and out of harm's way:
 
-[<img src='/images/pdp11/racks_thumbnail_tall.jpg'/>]({filename}/images/pdp11/racks.jpg)
-[<img src='/images/pdp11/kb11a-backplane_thumbnail_tall.jpg'/>]({filename}/images/pdp11/kb11a-backplane.jpg)
-[<img src='/images/pdp11/rk11c_thumbnail_tall.jpg'/>]({filename}/images/pdp11/rk11c.jpg)
-[<img src='/images/pdp11/rk05-help_thumbnail_tall.png'/>]({filename}/images/pdp11/rk05-help.png)
+[pswipe:pdp11,racks.jpg,H960 racks: the backbones]
+[pswipe:pdp11,kb11a-backplane.jpg,KB11-A CPU backplane]
+[pswipe:pdp11,rk11c.jpg,RK11-C disk controller backplane]
+[pswipe:pdp11,rk05-help.png,Help getting the RK05 drives off the floor -- thanks, Chris!]

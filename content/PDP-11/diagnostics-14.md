@@ -2,7 +2,7 @@ Title: PDP-11/45: Diagnostics XIV - CPU, MMU, FPU Complete!
 Date: 2017-1-16
 Tags: Retro-Computing, PDP-11
 
-Okay, after socketing in the replacement 74H10 and reseating a few boards, the output from the floating 
+Okay, after socketing in the replacement 74H10 and reseating a few boards, the output from the floating
 point diagnostic now looks correct:
 
 <span style="font-size: x-small; font-family: monospace; white-space: pre; display: block; line-height: normal; font-weight: bold;">................ ................ ................ ................ .........11..... .........11..... .........11..... .........11.....
@@ -64,7 +64,7 @@ point diagnostic now looks correct:
 .......1111..... .........11..... .........11..... .........11..... ................ ................ ................ ................
 .........11..... .........11..... .........11..... .........11..... ................ ................ ................ ................</span>
 
-With this fix, **the machine is now reliably passing the complete suite of CPU, MMU, and FPU diagnostics** 
+With this fix, **the machine is now reliably passing the complete suite of CPU, MMU, and FPU diagnostics**
 -- a real milestone!  I also loaded paper tape BASIC via PDP11GUI, swapped the console over to my VT100, and
 played around for a little bit.  Working well, and gratifying to see the machine actually running some
 software other than diagnostics.
@@ -82,5 +82,5 @@ leakage through filter caps in the various power supplies that the GFCI has star
 Took a pause to rewire the box -- left two of the outlets GFCI protected for the washer/dryer, and rewired two
 as non-protected for use with the PDP-11.
 
-[<img src='/images/pdp11/cabinets_thumbnail_tall.jpg'/>]({filename}/images/pdp11/cabinets.jpg)
-[<img src='/images/pdp11/basic_thumbnail_tall.jpg'/>]({filename}/images/pdp11/basic.jpg)
+[pswipe:pdp11,cabinets.jpg,Cabinet side panels and decorative top panels cleaned and installed]
+[pswipe:pdp11,basic.jpg,Running papertape BASIC, loaded via PDP11GUI]

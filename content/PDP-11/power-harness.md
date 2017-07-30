@@ -14,5 +14,5 @@ track down.
 Here are some pictures of the amassed wire of appropriate guages and colors, connectors, crimp pins, and the start of
 the harness build on the bench:
 
-[<img src='/images/pdp11/harness-parts_thumbnail_tall.jpg'/>]({filename}/images/pdp11/harness-parts.jpg)
-[<img src='/images/pdp11/harness-bench_thumbnail_tall.jpg'/>]({filename}/images/pdp11/harness-bench.jpg)
+[pswipe:pdp11,harness-parts.jpg,Wire, connectors, and crimp tool to get started on replacement power harness]
+[pswipe:pdp11,harness-bench.jpg,Partially completed replacement power harness]

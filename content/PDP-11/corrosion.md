@@ -6,6 +6,6 @@ Had a little more time to work on the PDP-11 this weekend.  Mostly going after s
 
 Neon indicators on the H742s are dim and flickery, so ordered some replacements for these, too.
 
-[<img src='/images/pdp11/h742-teardown_thumbnail_tall.jpg'/>]({filename}/images/pdp11/h742-teardown.jpg)
-[<img src='/images/pdp11/h742-corrosion_thumbnail_tall.jpg'/>]({filename}/images/pdp11/h742-corrosion.jpg)
-[<img src='/images/pdp11/cpu-cabinet_thumbnail_tall.jpg'/>]({filename}/images/pdp11/cpu-cabinet.jpg)
+[pswipe:pdp11,h742-teardown.jpg,Tearing down the H742 power supplies]
+[pswipe:pdp11,h742-corrosion.jpg,Corrosion on part of an H742 chassis, to be sanded and painted]
+[pswipe:pdp11,cpu-cabinet.jpg,CPU cabinet getting some touch-up paint after sanding corroded spots]

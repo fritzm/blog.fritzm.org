@@ -62,6 +62,6 @@ mail.
 Pics here of the logic analyzer setup, and captured traces of a write and subsequent read to one of the misbehaving
 chips:
 
-[<img src='/images/pdp11/ms11-debug_thumbnail_tall.jpg'/>]({filename}/images/pdp11/ms11-debug.jpg)
+[pswipe:pdp11,ms11-debug.jpg,MS11 memory card debug in progress, with board extender, logic analyzer, and KM11]
 [<img src='/images/pdp11/bad-dram-write_thumbnail_tall.jpg'/>]({filename}/images/pdp11/bad-dram-write.jpg)
 [<img src='/images/pdp11/bad-dram-read_thumbnail_tall.jpg'/>]({filename}/images/pdp11/bad-dram-read.jpg)

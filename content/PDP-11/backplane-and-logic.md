@@ -10,7 +10,7 @@ A tip copied from a fellow restorer: Alconox detergent for removing grime from v
 
 Also pictured here are the characteristic bloody knuckles that are obtained whenever wrestling with PDP backplanes, logic cards, and terminators in close confines.  That really takes you back...
 
-[<img src='/images/pdp11/boards-in-chassis_thumbnail_tall.jpg'/>]({filename}/images/pdp11/boards-in-chassis.jpg)
-[<img src='/images/pdp11/board-with-crystals_thumbnail_tall.jpg'/>]({filename}/images/pdp11/board-with-crystals.jpg)
-[<img src='/images/pdp11/crystals_thumbnail_tall.jpg'/>]({filename}/images/pdp11/crystals.jpg)
-[<img src='/images/pdp11/knuckles_thumbnail_tall.jpg'/>]({filename}/images/pdp11/knuckles.jpg)
+[pswipe:pdp11,boards-in-chassis.jpg,CPU and MMU logic installed.  Empty slots on the right are for the FPU.]
+[pswipe:pdp11,board-with-crystals.jpg,Logic board with crystals after several decades of storage]
+[pswipe:pdp11,crystals.jpg,Closeup of crystals on logic board]
+[pswipe:pdp11,knuckles.jpg,The characteristic bloody knuckles that are obtained whenever wrestling with PDP backplanes, logic cards, and terminators in close confines]

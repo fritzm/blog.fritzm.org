@@ -27,4 +27,4 @@ seriously on this restoration.  :-)
 
 Going to stop here on a high note, and pick up trying to get a good RT-11 boot next time.
 
-[<img src='/images/pdp11/rkdp-boot_thumbnail_tall.jpg'/>]({filename}/images/pdp11/rkdp-boot.jpg)
+[pswipe:pdp11,rkdp-boot.jpg,First boot off disk -- RKDP diagnostics pack!]

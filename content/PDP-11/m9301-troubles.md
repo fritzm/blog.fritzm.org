@@ -78,6 +78,6 @@ time, and as a byproduct after I fixed my M9301 I got 100% agreement with Noel's
 listing can be considered authoritative now; good enough to generate replacement PROMs should anybody
 ever need to do so.
 
-[<img src='/images/pdp11/M9301_thumbnail_tall.jpg'/>]({filename}/images/pdp11/M9301.jpg)
-[<img src='/images/pdp11/M792-YB_thumbnail_tall.jpg'/>]({filename}/images/pdp11/M792-YB.jpg)
+[pswipe:pdp11,M9301.jpg,M9301-YB bootstrap ROM]
+[pswipe:pdp11,M792-YB.jpg,M792-YB diode-matrix bootstrap ROM]
 {% youtube E7MAFjZVZ2Y?rel=0 328 200 %}
