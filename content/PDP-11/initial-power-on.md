@@ -13,7 +13,7 @@ address mode switches and indicators are working though at least.
 
 Some investigation on the backplane turned up no +5V to slots 10 though 15, which could be part of the problem.  Ah,
 that's what the mysterious clipped red wire soldered to the backplane might have been about (visible in the top right
-[here]({filename}/images/pdp11/kb11a-backplane.jpg)...)  Sure enough, some inspection shows the corresponding trace on
+[here]({static}/images/pdp11/kb11a-backplane.jpg)...)  Sure enough, some inspection shows the corresponding trace on
 the backplane looks burnt!  I could hack this red wire into my new harness I guess, but I'd rather remove it and try to
 repair the board trace with a shunt.  So the backplane will have to come out.  I guess that's what I get for not
 investigating the weird red wire and for not beeping out the power distribution on the backplane before mounting

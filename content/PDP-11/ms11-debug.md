@@ -63,5 +63,5 @@ Pics here of the logic analyzer setup, and captured traces of a write and subseq
 chips:
 
 [pswipe:pdp11,ms11-debug.jpg,MS11 memory card debug in progress, with board extender, logic analyzer, and KM11]
-[<img src='/images/pdp11/bad-dram-write_thumbnail_tall.jpg'/>]({filename}/images/pdp11/bad-dram-write.jpg)
-[<img src='/images/pdp11/bad-dram-read_thumbnail_tall.jpg'/>]({filename}/images/pdp11/bad-dram-read.jpg)
+[<img src='/images/pdp11/bad-dram-write_thumbnail_tall.jpg'/>]({static}/images/pdp11/bad-dram-write.jpg)
+[<img src='/images/pdp11/bad-dram-read_thumbnail_tall.jpg'/>]({static}/images/pdp11/bad-dram-read.jpg)
