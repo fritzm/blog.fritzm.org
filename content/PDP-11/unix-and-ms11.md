@@ -330,11 +330,11 @@ cases!  Womp, womp...
 Well, might as well continue to look into the parity error handling, since some things still seem fishy there.
 The DEC documentation is a bit murky here; various versions of the KB11-A maintenance manual and 11/45
 processor handbook say different and somewhat contradictory things; some info in earlier editions is also
-removed form later ones.  The available engineering drawings for the KB11-A CPU look to have some significant
-differences from the actual boards I have on hand, and there are more than a few ECO's for these boards listed
-as relating specifically to parity handling, but for which no other information is available.  And Noel has
-uncovered evidence that even the Unibus signaling related to parity may have been changed by DEC around the
-early times of the early 11/45. Could be interesting...
+removed form later ones.  The available engineering drawings for the relevant parts of the KB11-A CPU look to
+have some significant differences from the actual boards I have on hand, and there are more than a few ECO's
+for these boards listed as relating specifically to parity handling, but for which no other information is
+available.  And Noel has uncovered evidence that even the Unibus signaling related to parity may have been
+changed by DEC around the times of the early 11/45. Could be interesting...
 
 
 
