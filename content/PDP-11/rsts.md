@@ -95,7 +95,7 @@ expected to be triggered by a corrupted INIT.BAC or BASIC.RTS file.  This led me
 disk pack contents really matched the image file I was running successfully under simh.  Some standalone code
 to dump a CRC of every sector on the pack seemed like it would be useful in this regard, so I coded up the
 following:
-```masm
+```macro
         RKDS=177400
         RKER=177402
         RKCS=177404
@@ -115,8 +115,8 @@ START:
 
         MOV     #10041,R0       ;CRC POLYNOMIAL 
         MOV     #CRCTBL,R1      ;LOOKUP TABLE TO FILL
-        ADD     #1000,R1        ;START FILLING FROM END (+512 WORDS)
-        MOV     #377,R2         ;COUNT DOWN FROM INDEX 511      
+        ADD     #1000,R1        ;START FILLING FROM END (+256 WORDS)
+        MOV     #377,R2         ;COUNT DOWN FROM INDEX 255
 L0:     MOV     R2,R4           ;GET COPY OF INDEX
         SWAB    R4              ;MOVE TO UPPER BYTE
         MOV     #10,R3          ;LOOP OVER EIGHT BITS OF INDEX  
