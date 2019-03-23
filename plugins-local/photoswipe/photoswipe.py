@@ -46,7 +46,7 @@ def article_generator_finalized(generator):
 
 galleries_template = """\
 var galleries = {
-    {% for galname, items in GALLERIES.iteritems() %}\
+    {% for galname, items in GALLERIES.items() %}\
         {{galname}}: [
             {% for item in items %}\
                 {src:"{{item[0]}}", w:{{item[1][0]}}, h:{{item[1][1]}}, title:"{{item[2]}}"},
