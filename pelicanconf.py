@@ -1,15 +1,16 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*- #
+from __future__ import unicode_literals
 
-AUTHOR = u'Fritz Mueller'
-SITENAME = u'fritzm.github.io'
+AUTHOR = 'Fritz Mueller'
+SITENAME = 'fritzm.github.io'
 SITEURL = ''
 
 PATH = 'content'
 
 TIMEZONE = 'America/Los_Angeles'
 
-DEFAULT_LANG = u'en'
+DEFAULT_LANG = 'en'
 
 # Feed generation is usually not desired when developing
 FEED_ALL_ATOM = None
@@ -41,5 +42,3 @@ OUTPUT_RETENTION = (".git*")
 IMAGE_PATH = "images"
 THUMBNAIL_SIZES = { 'thumbnail_tall': '?x200' }
 THUMBNAIL_DIR = "images"
-
-DISQUS_SITENAME = 'fritzm'

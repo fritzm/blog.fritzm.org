@@ -1,4 +1,4 @@
-PY?=python
+PY?=python3
 PELICAN?=pelican
 PELICANOPTS=
 
@@ -72,4 +72,4 @@ publish:
 	$(PELICAN) $(INPUTDIR) -o $(OUTPUTDIR) -s $(PUBLISHCONF) $(PELICANOPTS)
 
 
-.PHONY: html help clean regenerate serve serve-global devserver stopserver publish 
+.PHONY: html help clean regenerate serve serve-global devserver publish 
