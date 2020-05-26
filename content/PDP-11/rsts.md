@@ -45,7 +45,7 @@ in the data lights on my machine.
 option in the change memory layout section of the "DEFAULT" command at the boot prompt.  Enter "ODT" there,
 and provide a space for it in the memory map.  After that, at ^P at the console will take you to the ODT
 prompt. 
-```
+```text
    Memory allocation table:
 
      0K: 00000000 - 00123777 (  21K) : EXEC
@@ -95,7 +95,7 @@ expected to be triggered by a corrupted INIT.BAC or BASIC.RTS file.  This led me
 disk pack contents really matched the image file I was running successfully under simh.  Some standalone code
 to dump a CRC of every sector on the pack seemed like it would be useful in this regard, so I coded up the
 following:
-```macro
+```text
         RKDS=177400
         RKER=177402
         RKCS=177404

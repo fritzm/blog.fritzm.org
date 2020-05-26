@@ -34,7 +34,7 @@ along the way.  This code maps and tests every memory location on the MS11-L, us
 It relocates itself so it can test the lowest physical bank as well.  Tests include all-ones, all-zeros,
 write address to location, and a "random" data test which just uses program code test sequence:
 
-```macro
+```text
         KIPDR0=172300
         KIPDR1=172302
         KIPDR2=172304
@@ -330,17 +330,8 @@ cases!  Womp, womp...
 Well, might as well continue to look into the parity error handling, since some things still seem fishy there.
 The DEC documentation is a bit murky here; various versions of the KB11-A maintenance manual and 11/45
 processor handbook say different and somewhat contradictory things; some info in earlier editions is also
-removed form later ones.  The available engineering drawings for the relevant parts of the KB11-A CPU look to
+removed from later ones.  The available engineering drawings for the relevant parts of the KB11-A CPU look to
 have some significant differences from the actual boards I have on hand, and there are more than a few ECO's
 for these boards listed as relating specifically to parity handling, but for which no other information is
 available.  And Noel has uncovered evidence that even the Unibus signaling related to parity may have been
 changed by DEC around the times of the early 11/45. Could be interesting...
-
-
-
-
-
-
-
-
-
