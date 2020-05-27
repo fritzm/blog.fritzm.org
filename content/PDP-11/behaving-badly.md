@@ -38,83 +38,83 @@ I got the machine home and reassembled, and verified that the problem was still 
 passed, until I found some time to dig deeper into the problem just last night.  The relevant failing
 diagnostic is ZRKK test 37, and the output is:
 
-```text
-DRIVE 0
+    :::text
+    DRIVE 0
 
-RK11 DIDN'T INTRUPT AFTER SK COMPLETED
-  PC     RKCS    RKER    RKDS
-014476  000310  000000  004713
-
-
-SCP DIDN'T SET AFTER SEEK WAS DONE
-  PC   RKCS
-014526  000310
+    RK11 DIDN'T INTRUPT AFTER SK COMPLETED
+      PC     RKCS    RKER    RKDS
+    014476  000310  000000  004713
 
 
-RK11 DIDN'T INTRUPT AFTER SK COMPLETED
-  PC     RKCS    RKER    RKDS
-014476  000310  000000  004712
+    SCP DIDN'T SET AFTER SEEK WAS DONE
+      PC   RKCS
+    014526  000310
 
 
-SCP DIDN'T SET AFTER SEEK WAS DONE
-  PC   RKCS
-014526  000310
+    RK11 DIDN'T INTRUPT AFTER SK COMPLETED
+      PC     RKCS    RKER    RKDS
+    014476  000310  000000  004712
 
 
-TIMOUT,PC=004536
-```
+    SCP DIDN'T SET AFTER SEEK WAS DONE
+      PC   RKCS
+    014526  000310
+
+
+    TIMOUT,PC=004536
 
 And the relevant bit of the diagnostic listing:
-```masm
-014362  2$:     MOV     RKVEC,R1
-014366          MOV     #3$,(R1)+               ;SET UP VECTOR ADRES FOR RK11 INTERUPT
-014372          MOV     #340,(R1)               ;SET UP PSW ON INTERRUPT
-014376          BIS     #40,@RKDA               ;ADRES CYLINDER #1
-014404          MOV     #111,@R0                ;SEEK, GO WITH IDE SET
-014410          WAT.INT ,300                    ;WAIT FOR THE DRIVE TO
-                                                ;INTERRUPT AFTER ADRES WAS RECVD
-                                                ;WAITING TIME= 1.4 MS FOR 11/20
-                                                ;280 US FOR 11/45
-                                                ;ERROR, IF INTERUPT DID NOT OCCUR
-                                                ;BY NOW
-014414          MOV     #BADINT,@RKVEC          ;RESTORE UNEXPECTED RK11 INTERRUPT
-014422          MOV     @R0,$REG0               ;GET RKCS
-014426          ERROR   75                      ;INTERRUPT DID NOT OCCUR AFTER
-                                                ;SEEK WAS INITIATED WITH IDE SET
-014430          BR      3$+4
-014432  3$:     CMP     (SP)+,(SP)+             ;OK, IF RK11 INTERRUPTED TO THIS
-                                                ;RESTORE STACK POINTER (FROM RK11 INTERRUPT)
-014434          CMP     (SP)+,(SP)+             ;RESTORE STACK POINTER (FROM
-                                                ;WAT.INT)
-014436          MOV     #5$,@RKVEC              ;SET UP NEW VECTOR ADRES FOR RK11
-014444          BIT     #20000,@R0              ;IS SCP CLEAR
-014450          BEQ     4$                      ;YES, BRANCH
-014452          MOV     @R0,$REG0               ;GET RKCS
-014456          ERROR   76                      ;SCP SET BEFORE SEEK TO LAST
-                                                ;CYLINDER WAS DONE
-014460  4$:     WAT.INT ,56700                  ;WAIT FOR DRIVE TO INTERRUPT
-                                                ;AFTER SEEK WAS COMPLETED
-                                                ;WAITING TIME=180 MS FOR 11/20
-                                                ;36 MS FOR 11/45
-014464          MOV     #BADINT,@RKVEC          :IT'S AN ERROR IF BY THIS TIME
-                                                ;INTERRUPT HAS NOT OCCURERED
-014472          JSR     PC,GT3RG                ;GO GET RKCS, ER, DS
-014476          ERROR   77                      ;RK11 DID NOT INTERRUPT AFTER SEEK (TO
-                                                ;LAST CYLINDER) WAS DONE WITH IDE SET
-014500          BR      5$+2
-014502  5$:     CMP     (SP)+,(SP)+             ;OK, IF RK11 INTERUPTED TO THIS AFTER
-                                                ;SEEK WAS COMPLETED. RESTORE
-                                                ;STACK POINTER (FROM RK11 INTERRUPT)
-014504          CMP     (SP)+,(SP)+             ;RESTORE STACK POINTER (FROM
-                                                ;WAT.INT)
-014506          MOV     #BADINT,@RKVEC          ;RESTORE RK11 INTERRUPT VECTOR ADRES
-                                                ;FOR UNEXPECTED INTERUTS
-014514          BIT     #20000,@R0              ;DID SCP BIT SET?
-014520          BNE     6$                      ;YES, BRANCH
-014522          MOV     @R0,$REG0               ;GET RKCS
-014526          ERROR   53                      ;SCP DID NOT SET AFTER RK11 INTERRUPTED
-                                                ;INDICATING SEEK WAS
-```
+
+    #!masm
+    014362  2$:     MOV     RKVEC,R1
+    014366          MOV     #3$,(R1)+               ;SET UP VECTOR ADRES FOR RK11 INTERUPT
+    014372          MOV     #340,(R1)               ;SET UP PSW ON INTERRUPT
+    014376          BIS     #40,@RKDA               ;ADRES CYLINDER #1
+    014404          MOV     #111,@R0                ;SEEK, GO WITH IDE SET
+    014410          WAT.INT ,300                    ;WAIT FOR THE DRIVE TO
+                                                    ;INTERRUPT AFTER ADRES WAS RECVD
+                                                    ;WAITING TIME= 1.4 MS FOR 11/20
+                                                    ;280 US FOR 11/45
+                                                    ;ERROR, IF INTERUPT DID NOT OCCUR
+                                                    ;BY NOW
+    014414          MOV     #BADINT,@RKVEC          ;RESTORE UNEXPECTED RK11 INTERRUPT
+    014422          MOV     @R0,$REG0               ;GET RKCS
+    014426          ERROR   75                      ;INTERRUPT DID NOT OCCUR AFTER
+                                                    ;SEEK WAS INITIATED WITH IDE SET
+    014430          BR      3$+4
+    014432  3$:     CMP     (SP)+,(SP)+             ;OK, IF RK11 INTERRUPTED TO THIS
+                                                    ;RESTORE STACK POINTER (FROM RK11 INTERRUPT)
+    014434          CMP     (SP)+,(SP)+             ;RESTORE STACK POINTER (FROM
+                                                    ;WAT.INT)
+    014436          MOV     #5$,@RKVEC              ;SET UP NEW VECTOR ADRES FOR RK11
+    014444          BIT     #20000,@R0              ;IS SCP CLEAR
+    014450          BEQ     4$                      ;YES, BRANCH
+    014452          MOV     @R0,$REG0               ;GET RKCS
+    014456          ERROR   76                      ;SCP SET BEFORE SEEK TO LAST
+                                                    ;CYLINDER WAS DONE
+    014460  4$:     WAT.INT ,56700                  ;WAIT FOR DRIVE TO INTERRUPT
+                                                    ;AFTER SEEK WAS COMPLETED
+                                                    ;WAITING TIME=180 MS FOR 11/20
+                                                    ;36 MS FOR 11/45
+    014464          MOV     #BADINT,@RKVEC          :IT'S AN ERROR IF BY THIS TIME
+                                                    ;INTERRUPT HAS NOT OCCURERED
+    014472          JSR     PC,GT3RG                ;GO GET RKCS, ER, DS
+    014476          ERROR   77                      ;RK11 DID NOT INTERRUPT AFTER SEEK (TO
+                                                    ;LAST CYLINDER) WAS DONE WITH IDE SET
+    014500          BR      5$+2
+    014502  5$:     CMP     (SP)+,(SP)+             ;OK, IF RK11 INTERUPTED TO THIS AFTER
+                                                    ;SEEK WAS COMPLETED. RESTORE
+                                                    ;STACK POINTER (FROM RK11 INTERRUPT)
+    014504          CMP     (SP)+,(SP)+             ;RESTORE STACK POINTER (FROM
+                                                    ;WAT.INT)
+    014506          MOV     #BADINT,@RKVEC          ;RESTORE RK11 INTERRUPT VECTOR ADRES
+                                                    ;FOR UNEXPECTED INTERUTS
+    014514          BIT     #20000,@R0              ;DID SCP BIT SET?
+    014520          BNE     6$                      ;YES, BRANCH
+    014522          MOV     @R0,$REG0               ;GET RKCS
+    014526          ERROR   53                      ;SCP DID NOT SET AFTER RK11 INTERRUPTED
+                                                    ;INDICATING SEEK WAS
+
 So, based on the fact that we don't hit error 75 from 14426 (and the fact that the previous test, #36, in
 this diagnostic is passing) unlike some previous issues the RK11 here *is* able to generate interrupts and the
 11/45 CPU is fielding them.  The issue seems related to the seek completion polling circuitry on the RK11.
