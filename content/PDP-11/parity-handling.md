@@ -29,15 +29,14 @@ Immediately here we run into some trouble:
 - What do the KB11-A processor maintenance manuals have to offer?  Paragraph 7.7.7 of the 1972 KB11-A
   maintenance manual states:
 
-        :::text
-        A Parity error on the Unibus A is indicated by BUSA PA L high and BUSA PB L low.  The parity error
-        causes UNI PERF (Unibus parity error flag) to be set when MSYN is cleared.  UNI PERF (1) L asserts 
-        UBCB PARITY ERR SET L during the pause cycle, which sets the console (CONF) flag and halts the CPU.
-
-        The semiconductor memory control EHA and EHB (enable halt) flip-flops may be set under program control
-        to assert SMCB PE HALT if a parity error is detected.  This input also asserts UBCB PARITY ERR SET L,
-        which sets the console flag and halts the CPU.  Thus, if either a Unibus A parity error or SMCB PE
-        HALT L is asserted, the processor will be vectored to trap when the CONT switch is pressed.
+    > A Parity error on the Unibus A is indicated by BUSA PA L high and BUSA PB L low.  The parity error
+    > causes UNI PERF (Unibus parity error flag) to be set when MSYN is cleared.  UNI PERF (1) L asserts UBCB
+    > PARITY ERR SET L during the pause cycle, which sets the console (CONF) flag and halts the CPU.
+    >
+    > The semiconductor memory control EHA and EHB (enable halt) flip-flops may be set under program control
+    > to assert SMCB PE HALT if a parity error is detected.  This input also asserts UBCB PARITY ERR SET L,
+    > which sets the console flag and halts the CPU.  Thus, if either a Unibus A parity error or SMCB PE HALT
+    > L is asserted, the processor will be vectored to trap when the CONT switch is pressed.
 
     Note that this text addresses how the CPU handles detected parity errors in both Unibus (first paragraph)
     and fastbus (second paragraph) memory systems.  Unibus parity errors are stated to set the CONF flag and
@@ -155,39 +154,40 @@ fit directly in the narrative above, for completeness and for future reference:
 
 - On RSTS parity CSR sniffing, from Paul:
 
-        :::text
-        From: Paul Koning
-        To: cctalk
-        Subject: Re: PDP-11/45 RSTS/E boot problem
-
-        >> There is a lot of inconsistent and incomplete information in the documentation about memory CSRs.
-        >> They appear to come in different flavors depending on memory hardware; some of the earlier ones 
-        >> support setting a bit to determine whether parity errors will halt or trap the CPU, while some 
-        >> of the later ones (like my MS11-L) simply have "enable" and don't distinguish between halt and
-        >> trap. I'm curious how OS init code sniffs out what memory CSRs there are, determines their specific
-        >> flavors and, in a heterogeneous system, determines how much address space is under the auspice of
-        >> each CSR?  Maybe Paul and Noel can comment here wrt. RSTS and Unix respectively?
-
-        I quickly skimmed some RSTS INIT code (for V10.1).  Two things observed:
-
-        1. At boot, INIT determines the memory layout.  It does this by writing 0 then -2 into each location to
-        see if it works.  If it gets an NXM trap (trap to 4) or a parity trap (trap to 114) it calls that 1kW
-        block of memory non-existent.  For the case of a parity error, it tells you that it saw a parity error
-        and is disabling that block for that reason.
-
-        2. In the DEFAULT option (curiously enough) there is a routine that looks for up to 16 parity CSRs
-        starting at 172100.  This happens on entry to the memory layout option.  You can display what it finds
-        by using the PARITY command in response to the "Table suboption" prompt.
-
-        It checks if the bits 007750 are active in the parity CSR, if so it takes that to be an address/ECC
-        parity CSR.  It figures out the CSR to memory association by going through memory in 1 kW increments,
-        writing 3, 5 to the first 2 words, then setting "write wrong parity" in each CSR (007044), then doing
-        BIC #3,.. BIC #5,... to those two test words, then reading them both back.  This should set bad parity,
-        and it scans all the CSRs to see which one reports an error (top bit in the CSR).  If no CSR has that
-        set, it concludes the particular block is no-parity memory.
-
-        I probably got some of the details wrong, the above is from a fast skim of the code, but hopefully it
-        will get you started.
+    > From: Paul Koning  
+    > To: cctalk  
+    > Subject: Re: PDP-11/45 RSTS/E boot problem  
+    >
+    > > Fritz Mueller wrote:
+    > >
+    > > There is a lot of inconsistent and incomplete information in the documentation about memory CSRs. They
+    > > appear to come in different flavors depending on memory hardware; some of the earlier ones support
+    > > setting a bit to determine whether parity errors will halt or trap the CPU, while some of the later
+    > > ones (like my MS11-L) simply have "enable" and don't distinguish between halt and trap. I'm curious
+    > > how OS init code sniffs out what memory CSRs there are, determines their specific flavors and, in a
+    > > heterogeneous system, determines how much address space is under the auspice of each CSR?  Maybe Paul
+    > > and Noel can comment here wrt. RSTS and Unix respectively?
+    >
+    > I quickly skimmed some RSTS INIT code (for V10.1).  Two things observed:
+    > 
+    > 1\. At boot, INIT determines the memory layout.  It does this by writing 0 then -2 into each location to
+    > see if it works.  If it gets an NXM trap (trap to 4) or a parity trap (trap to 114) it calls that 1kW
+    > block of memory non-existent.  For the case of a parity error, it tells you that it saw a parity error
+    > and is disabling that block for that reason.
+    >
+    > 2\. In the DEFAULT option (curiously enough) there is a routine that looks for up to 16 parity CSRs
+    > starting at 172100.  This happens on entry to the memory layout option.  You can display what it finds
+    > by using the PARITY command in response to the "Table suboption" prompt.
+    >
+    > It checks if the bits 007750 are active in the parity CSR, if so it takes that to be an address/ECC
+    > parity CSR.  It figures out the CSR to memory association by going through memory in 1 kW increments,
+    > writing 3, 5 to the first 2 words, then setting "write wrong parity" in each CSR (007044), then doing
+    > BIC #3,.. BIC #5,... to those two test words, then reading them both back.  This should set bad parity,
+    > and it scans all the CSRs to see which one reports an error (top bit in the CSR).  If no CSR has that
+    > set, it concludes the particular block is no-parity memory.
+    >
+    > I probably got some of the details wrong, the above is from a fast skim of the code, but hopefully it
+    > will get you started.
 
     My machine currently has one MS11-L, which has the newer CSR layout referred to by Paul above (different
     than the much older MS11-B/C CSR layout depicted at the top of this article; see MS11-L docs for further
@@ -204,64 +204,54 @@ fit directly in the narrative above, for completeness and for future reference:
   parity implementation _before_ the era of the start of this article, bridging back to the KA11 (11/20) CPU.
   Quite interesting!
 
-        :::text
-        From: Noel Chiappa
-        To: cctalk
-        Subject: Change in UNIBUS parity operation (Was: PDP-11/45 RSTS/E boot problem)
-
-        >> Even better, it claims to be able to control whether the memory uses odd
-        >> or even parity! (How, for UNIBUS memory, I don't know - there's no way to do
-        >> this over the UNIBUS.
-
-        So this really confused me, as the UNIBUS spec says parity is wholly within
-        the slave device, and only an _error_ signal is transferred over the
-        bus. E.g. from the 'pdp11 peripherals handbook', 1975 edition (pg. 5-8): "PA
-        and PB are generated by a slave ... [it] negates PA and asserts PB to indicate
-        a parity error ... both negated indicates no parity error. [other
-        combinations] are conditions reserved for future use."
-
-        The answer is that originally the UNIBUS parity operation was _different_, and
-        that sometime around the introduction of the PDP-11/45, they _changed_ it, which
-        is apparently why Appendix E, about parity in the /45, says what it does!
-
-        I found the first clue in the MM11-F Core Memory Manual (DEC-11-HMFA-D - which
-        is not online, in fact no MM11-F stuff is online, I'll have to scan it all and
-        send it to Al); I was looking in that to see if the parity version had a CSR
-        or not (to reply to Paul Koning), and on the subject of parity it said this:
-        "The data bits on the bus are called BUS DPB0 and BUS DPB1." And there is
-        nothing else on how the two parity bits are _used_ - the clear implication is
-        that the memory just _stores_ them, and hands them to someone else (the
-        master) over the bus, for actual use.
-
-        Looking further, I found proof in the "unibus interface manual" - and
-        moreover, the details differ between the first (DEC-11-HIAA-D) and second
-        (DEC-11-HIAB-D) editions (both of which differ from the above)!
-
-        In the first, Table 2-1 has these entries for PA and PB: "Parity Available -
-        PA ... Indicates paritied data" and "Parity Bit - PB ... Transmits parity
-        bit"; at the bottom of page 2-4 we find "PA indicates that the data being
-        transferred is to use parity, and PB transmits the parity bit. Neither line
-        is used by the KA11 processor."
-
-        (Which explains why, when, after reading about parity in the MM11-F manual,
-        I went looking for parity stuff in the KA11 which would use it, I couldn't
-        find it!)
-
-        In the second, Table 2-1 has these entries for PA and PB: "Parity Bit Low - PA
-        ... Transmits parity bit, low byte" and "Parity Bit High - PB ... Transmits
-        parity bit, high byte"; at the top of page 2-5 we find wholly different text
-        from the above, including "These lines are used by the MP11 Parity Option in
-        conjunction with parity memories such as the MM11-FP."
-
-        I looked online for more about the MP11, but could find nothing. I wonder if
-        any were made?
-
-        This later version seems to agree with that Appendix E. I tried to find an
-        early -11/45 system manual, to see if it originally shipped with MM11-F's,
-        but couldn't locate one - does anyone have one? The ones online (e.g.
-        EK-1145-OP-001) are much later.
-
-        It's also interesting to speculate about reasons _why_ these changes were
-        made; I can think of several! :-)
+    > From: Noel Chiappa  
+    > Subject: Change in UNIBUS parity operation (Was: PDP-11/45 RSTS/E boot problem)  
+    > To: cctalk  
+    >
+    > > Even better, it claims to be able to control whether the memory uses odd or even parity! (How, for
+    > > UNIBUS memory, I don't know - there's no way to do this over the UNIBUS.
+    >
+    > So this really confused me, as the UNIBUS spec says parity is wholly within the slave device, and only
+    > an _error_ signal is transferred over the bus. E.g. from the 'pdp11 peripherals handbook', 1975 edition
+    > (pg. 5-8): "PA and PB are generated by a slave ... [it] negates PA and asserts PB to indicate a parity
+    > error ... both negated indicates no parity error. [other combinations] are conditions reserved for
+    > future use."
+    > 
+    > The answer is that originally the UNIBUS parity operation was _different_, and that sometime around the
+    > introduction of the PDP-11/45, they _changed_ it, which is apparently why Appendix E, about parity in
+    > the /45, says what it does!
+    > 
+    > I found the first clue in the MM11-F Core Memory Manual (DEC-11-HMFA-D - which is not online, in fact no
+    > MM11-F stuff is online, I'll have to scan it all and send it to Al); I was looking in that to see if the
+    > parity version had a CSR or not (to reply to Paul Koning), and on the subject of parity it said this:
+    > "The data bits on the bus are called BUS DPB0 and BUS DPB1." And there is nothing else on how the two
+    > parity bits are _used_ - the clear implication is that the memory just _stores_ them, and hands them to
+    > someone else (the master) over the bus, for actual use.
+    >
+    > Looking further, I found proof in the "unibus interface manual" - and moreover, the details differ
+    > between the first (DEC-11-HIAA-D) and second (DEC-11-HIAB-D) editions (both of which differ from the
+    > above)!
+    >
+    > In the first, Table 2-1 has these entries for PA and PB: "Parity Available - PA ... Indicates paritied
+    > data" and "Parity Bit - PB ... Transmits parity bit"; at the bottom of page 2-4 we find "PA indicates
+    > that the data being transferred is to use parity, and PB transmits the parity bit. Neither line is used
+    > by the KA11 processor."
+    > 
+    > (Which explains why, when, after reading about parity in the MM11-F manual, I went looking for parity
+    > stuff in the KA11 which would use it, I couldn't find it!)
+    >
+    > In the second, Table 2-1 has these entries for PA and PB: "Parity Bit Low - PA ... Transmits parity bit,
+    > low byte" and "Parity Bit High - PB ... Transmits parity bit, high byte"; at the top of page 2-5 we find
+    > wholly different text from the above, including "These lines are used by the MP11 Parity Option in
+    > conjunction with parity memories such as the MM11-FP."
+    >
+    > I looked online for more about the MP11, but could find nothing. I wonder if any were made?
+    >
+    > This later version seems to agree with that Appendix E. I tried to find an early -11/45 system manual,
+    > to see if it originally shipped with MM11-F's, but couldn't locate one - does anyone have one? The ones
+    > online (e.g. EK-1145-OP-001) are much later.
+    >
+    > It's also interesting to speculate about reasons _why_ these changes were made; I can think of several!
+    > :-)
 
 All for now!
