@@ -33,7 +33,7 @@ DEFAULT_PAGINATION = 10
 #RELATIVE_URLS = True
 
 PLUGIN_PATHS = ['plugins', 'plugins-local']
-PLUGINS = ['render_math', 'thumbnailer', 'liquid_tags.youtube', 'photoswipe']
+PLUGINS = ['render_math', 'thumbnailer', 'liquid_tags', 'liquid_tags.youtube', 'photoswipe']
 THEME = './theme'
 SLUGIFY_SOURCE = 'basename'
 
