@@ -9,10 +9,10 @@ entry]({filename}unix-and-ms11.md).  It booted on my machine, but dumped core on
 mode, or as soon as I did any heavy lifting in multi-user mode.
 
 The following is the conclusion of a chronology of the troubleshooting campaign that took place over the next
-month and a half, culminating in a smoking gun hardware fix and successful operation of V6 Unix on the machine
-(part I is [here]({filename}unix-v6-trouble-1.md).)  This was largely a collaborative effort between Noel
-Chiappa an myself via direct email correspondence, though some help was received from others via the cctalk
-mailing list as well.
+month and a half, culminating in a hardware fix and successful operation of V6 Unix on the machine (part I is
+[here]({filename}unix-v6-trouble-1.md).)  This was largely a collaborative effort between Noel Chiappa an
+myself via direct email correspondence, though some help was received from others via the cctalk mailing list
+as well.
 
 By this point, the nature of the `ls` problem had been fairly well characterized: part of the `ls` process
 address space ended up holding an incorrect portion of its program text; subsequently, when execution jumped
