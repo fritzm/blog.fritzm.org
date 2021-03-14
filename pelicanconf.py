@@ -7,6 +7,7 @@ SITENAME = 'fritzm.github.io'
 SITEURL = ''
 
 PATH = 'content'
+READERS = {'html': None}
 
 TIMEZONE = 'America/Los_Angeles'
 
