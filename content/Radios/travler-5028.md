@@ -37,11 +37,11 @@ the indent to pick up the narrative :-)
 tunable capacitor 50 in parallel form a tunable resonant tank.  Tube 1 provides gain, and the output is
 fed back positively via the second coil of transformer 44, forming a tunable oscillator.  Antenna 43 and the
 other half of ganged tunable capacitor 50 in parallel also form a weakly selective tank, which picks up RF
-and dumps it onto an additional grid of tube 1. Tube 1 is arranged such that the sum (mix) of the two
+and dumps it onto an additional grid of tube 1. Tube 1 is arranged such that the a mix of the two
 signals (oscillator and weakly selected RF) appears at the plate.
 
-<p>The oscillator and RF thus mixed "beat" (heterodyne) against each other, forming frequency images in the
-summed signal at both sum and difference frequencies; the difference frequencies will be of interest to us
+<p>The oscillator and RF thus mixed heterodyne against each other, forming frequency images in the
+output signal at both sum and difference frequencies; the difference frequencies will be of interest to us
 here.  Since the frequencies in the weakly selected RF and the oscillator track each other, their differences
 are always centered on a fixed frequency, called the "intermediate frequency", or "IF".  The remainder of the
 circuit need only be concerned with further selection, detection, and amplification at this fixed IF.  In this
