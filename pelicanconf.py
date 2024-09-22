@@ -22,7 +22,6 @@ AUTHOR_FEED_RSS = None
 
 # Social widget
 SOCIAL = (('facebook', 'http://facebook.com/fritzmueller'),
-	      ('twitter', 'http://twitter.com/infrafritz'),
 	      ('Instagram', 'http://instagram.com/infrafritz'),
 	      ('LinkedIn', 'http://www.linkedin.com/pub/fritz-mueller/a/679/62/'),
           ('JSFiddle', 'http://jsfiddle.net/user/fritzm/fiddles/'),
